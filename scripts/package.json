@@ -1,0 +1,8 @@
+{
+  "name": "snowmoon-build",
+  "private": true,
+  "description": "Headless-Chrome steps for building the Snowmoon editions",
+  "dependencies": {
+    "puppeteer-core": "23.11.1"
+  }
+}
