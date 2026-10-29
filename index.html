@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Snowmoon — Download</title>
+<meta name="description" content="Download Snowmoon by Vitalik Buterin as an EPUB for black-and-white or color e-readers, or as a PDF. Free under the GPL v3.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='%23dfe8f5' stroke='%231d3557' stroke-width='2'/%3E%3C/svg%3E">
+<style>
+:root {
+  --bg: #f6f4ef;
+  --surface: #ffffff;
+  --ink: #1b1f2a;
+  --muted: #5b6272;
+  --line: #e2ded4;
+  --accent: #1d3557;
+  --accent-ink: #ffffff;
+  --moon: #dfe8f5;
+  --moon-shade: #c9d6ea;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0d1220;
+    --surface: #151c2e;
+    --ink: #e8ecf4;
+    --muted: #9aa5ba;
+    --line: #26304a;
+    --accent: #9fc0ef;
+    --accent-ink: #0d1220;
+    --moon: #e8eef8;
+    --moon-shade: #c3cfe3;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0d1220; --surface: #151c2e; --ink: #e8ecf4; --muted: #9aa5ba; --line: #26304a;
+  --accent: #9fc0ef; --accent-ink: #0d1220; --moon: #e8eef8; --moon-shade: #c3cfe3;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 17px/1.6 Georgia, "Iowan Old Style", "Palatino Linotype", serif;
+}
+a { color: var(--accent); }
+.wrap { max-width: 760px; margin: 0 auto; padding: 56px 16px 40px; }
+
+header { text-align: center; margin-bottom: 44px; }
+.moon {
+  width: 84px; height: 84px; margin: 0 auto 22px; border-radius: 50%;
+  background: radial-gradient(circle at 36% 34%, var(--moon) 0 55%, var(--moon-shade) 100%);
+  box-shadow: 0 0 0 1px var(--line), 0 0 40px 6px color-mix(in srgb, var(--moon) 35%, transparent);
+}
+h1 { font-weight: normal; font-size: 2.6rem; letter-spacing: .14em; text-transform: uppercase; margin: 0; }
+.byline { font-style: italic; color: var(--muted); margin: 6px 0 18px; font-size: 1.1rem; }
+.lede { max-width: 34em; margin: 0 auto; color: var(--muted); }
+
+h2 {
+  font: 600 .78rem/1 system-ui, -apple-system, "Segoe UI", sans-serif;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--muted);
+  margin: 0 0 14px;
+}
+.downloads { display: grid; gap: 14px; margin-bottom: 44px; }
+.card {
+  display: grid; grid-template-columns: 1fr auto; gap: 6px 20px; align-items: center;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+  padding: 20px 22px;
+}
+.card h3 { margin: 0; font-size: 1.2rem; font-weight: 600; }
+.card p { margin: 0; color: var(--muted); font-size: .95rem; grid-column: 1; }
+.card .meta { font: .8rem/1.4 system-ui, -apple-system, "Segoe UI", sans-serif; color: var(--muted); grid-column: 1; }
+.btn {
+  grid-column: 2; grid-row: 1 / span 3;
+  display: inline-flex; align-items: center; gap: 8px; white-space: nowrap;
+  background: var(--accent); color: var(--accent-ink); text-decoration: none;
+  font: 600 .95rem/1 system-ui, -apple-system, "Segoe UI", sans-serif;
+  padding: 12px 18px; border-radius: 8px;
+}
+.btn:hover { filter: brightness(1.1); }
+.btn:focus-visible { outline: 3px solid var(--moon-shade); outline-offset: 2px; }
+.btn svg { width: 16px; height: 16px; }
+
+.help { display: grid; gap: 10px; margin-bottom: 44px; }
+.help dl { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 8px 18px; }
+.help dt { font-weight: 600; }
+.help dd { margin: 0; color: var(--muted); }
+
+.read-online {
+  text-align: center; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  padding: 22px 0; margin-bottom: 32px;
+}
+.read-online a { font-size: 1.05rem; }
+
+footer { color: var(--muted); font-size: .85rem; text-align: center; }
+footer p { margin: 6px 0; }
+
+@media (max-width: 560px) {
+  .wrap { padding-top: 40px; }
+  h1 { font-size: 2rem; }
+  .card { grid-template-columns: 1fr; }
+  .btn { grid-column: 1; grid-row: auto; justify-content: center; margin-top: 10px; }
+  .help dl { grid-template-columns: 1fr; gap: 2px; }
+  .help dd { margin-bottom: 10px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="moon" aria-hidden="true"></div>
+    <h1>Snowmoon</h1>
+    <p class="byline">a novel by Vitalik Buterin</p>
+    <p class="lede">Free e-reader and print-ready editions of the 32-chapter novel, built from the author's
+      published text. Pick the file that suits your device.</p>
+  </header>
+
+  <main>
+    <section aria-labelledby="dl-heading">
+      <h2 id="dl-heading">Download</h2>
+      <div class="downloads">
+        <article class="card">
+          <h3>EPUB — black &amp; white</h3>
+          <p>For grayscale e-ink readers. High-contrast text and illustrations, with color-coded diagrams redrawn using shapes.</p>
+          <span class="meta">Kobo Clara BW / 2E / HD, Kindle Paperwhite, Kobo Libra 2 · 3.1 MB</span>
+          <a class="btn" href="snowmoon.epub" download>
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 2v9M4 7l4 4 4-4M2 14h12"/></svg>
+            Download
+          </a>
+        </article>
+        <article class="card">
+          <h3>EPUB — color</h3>
+          <p>For color e-ink readers. Keeps each speaker's dialogue color and the colors in the story's screens and diagrams.</p>
+          <span class="meta">Kobo Clara Colour, Kobo Libra Colour, Kindle Colorsoft, Boox · 4.1 MB</span>
+          <a class="btn" href="snowmoon-color.epub" download>
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 2v9M4 7l4 4 4-4M2 14h12"/></svg>
+            Download
+          </a>
+        </article>
+        <article class="card">
+          <h3>PDF</h3>
+          <p>A 6×9 inch book layout with page numbers and chapter bookmarks, for tablets, computers or printing.</p>
+          <span class="meta">406 pages · 4.0 MB</span>
+          <a class="btn" href="snowmoon.pdf" download>
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 2v9M4 7l4 4 4-4M2 14h12"/></svg>
+            Download
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <section class="help" aria-labelledby="help-heading">
+      <h2 id="help-heading">Getting it onto your reader</h2>
+      <dl>
+        <dt>Kobo</dt>
+        <dd>Connect by USB and copy the EPUB onto the device, or add it through Dropbox or Google Drive in the Kobo settings.</dd>
+        <dt>Kindle</dt>
+        <dd>Send the EPUB with Amazon's Send to Kindle (web, app, or email). Amazon converts it on the way.</dd>
+        <dt>Phone or tablet</dt>
+        <dd>Open the EPUB in Apple Books, Google Play Books, or any EPUB app, or use the PDF.</dd>
+      </dl>
+    </section>
+
+    <div class="read-online">
+      <a href="https://vitalik.eth.limo/snowmoon/">Read Snowmoon online at the original site →</a>
+    </div>
+  </main>
+
+  <footer>
+    <p><em>Snowmoon</em> © Vitalik Buterin, released under the
+      <a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU GPL v3</a>.
+      These editions keep the text unchanged and are shared under the same license.</p>
+    <p><a href="https://github.com/tbsoc/snowmoon-ebook">Source and build scripts on GitHub</a></p>
+  </footer>
+</div>
+</body>
+</html>
