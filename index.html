@@ -56,6 +56,20 @@ header { text-align: center; margin-bottom: 44px; }
 h1 { font-weight: normal; font-size: 2.6rem; letter-spacing: .14em; text-transform: uppercase; margin: 0; }
 .byline { font-style: italic; color: var(--muted); margin: 6px 0 18px; font-size: 1.1rem; }
 .lede { max-width: 34em; margin: 0 auto; color: var(--muted); }
+.jump {
+  display: inline-block; margin-top: 18px; text-decoration: none;
+  font: 600 .9rem/1 system-ui, -apple-system, "Segoe UI", sans-serif;
+  border: 1px solid var(--line); border-radius: 999px; padding: 10px 16px; background: var(--surface);
+}
+.jump:hover { border-color: var(--accent); }
+
+.about {
+  display: grid; grid-template-columns: 1.6fr 1fr; gap: 28px;
+  margin-bottom: 44px; padding-bottom: 36px; border-bottom: 1px solid var(--line);
+}
+.about p { margin: 0 0 12px; }
+.about .author { font-size: .95rem; color: var(--muted); }
+.about .author h2 { color: var(--muted); }
 
 h2 {
   font: 600 .78rem/1 system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -99,6 +113,7 @@ footer p { margin: 6px 0; }
 @media (max-width: 560px) {
   .wrap { padding-top: 40px; }
   h1 { font-size: 2rem; }
+  .about { grid-template-columns: 1fr; gap: 8px; }
   .card { grid-template-columns: 1fr; }
   .btn { grid-column: 1; grid-row: auto; justify-content: center; margin-top: 10px; }
   .help dl { grid-template-columns: 1fr; gap: 2px; }
@@ -113,10 +128,38 @@ footer p { margin: 6px 0; }
     <h1>Snowmoon</h1>
     <p class="byline">a novel by Vitalik Buterin</p>
     <p class="lede">Free e-reader and print-ready editions of the 32-chapter novel, built from the author's
-      published text. Pick the file that suits your device.</p>
+      published text.</p>
+    <a class="jump" href="#dl-heading">Download the book ↓</a>
   </header>
 
   <main>
+    <section class="about" aria-label="About the book and author">
+      <div>
+        <h2>About the novel</h2>
+        <p>Snowmoon follows two lives in a far-future world of rival nations. In Veridia, a lush,
+          privacy-minded democracy, Gladias is training with the Order of Steering, the semi-anonymous body
+          whose taxes and subsidies gently nudge how everyone lives, until a stranger begins urging him to
+          turn the system against itself. In Dzego, a nation that lost a war a century ago and is still
+          harassed by the Arctic Empire, coordination happens less through the government than through
+          anonymous cryptographic networks and secret societies. There, Zei, a teenage prodigy at a
+          physics-based strategy game, is caught up in an attack on his school.</p>
+        <p>As pressure from the Arctic Empire grows, the novel asks what lets a society be both free and
+          strong. It is an idea-driven political science fiction story, full of experiments in governance
+          such as quadratic voting and public-goods funding, and it explores privacy as civic infrastructure,
+          open versus closed technology, and the cost of failing to cooperate.</p>
+      </div>
+      <div class="author">
+        <h2>About the author</h2>
+        <p>Vitalik Buterin is a programmer and writer best known as the co-founder of Ethereum. Born in
+          Russia in 1994 and raised in Canada, he co-founded Bitcoin Magazine in 2011, proposed Ethereum in
+          a 2013 white paper, and saw it launch in 2015.</p>
+        <p>He writes long-form essays on cryptography, governance, mechanism design and public-goods funding,
+          and co-authored the paper that introduced quadratic funding. A collection of his essays,
+          <em>Proof of Stake</em>, was published in 2022. <em>Snowmoon</em>, released free on his website in
+          2026, is his first full-length novel.</p>
+      </div>
+    </section>
+
     <section aria-labelledby="dl-heading">
       <h2 id="dl-heading">Download</h2>
       <div class="downloads">
