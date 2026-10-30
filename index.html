@@ -103,11 +103,7 @@ h2 {
 .btn svg { width: 16px; height: 16px; }
 
 /* Reading-width sections stay narrow and centered on wide screens */
-.help, .read-online, footer { max-width: 760px; margin-left: auto; margin-right: auto; }
-.help { display: grid; gap: 10px; margin-bottom: 44px; }
-.help dl { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 8px 18px; }
-.help dt { font-weight: 600; }
-.help dd { margin: 0; color: var(--muted); }
+.read-online, footer { max-width: 760px; margin-left: auto; margin-right: auto; }
 
 .read-online {
   text-align: center; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
@@ -133,13 +129,10 @@ footer p { margin: 6px 0; }
   .wrap { padding: 40px 16px 40px; }
   h1 { font-size: 2rem; }
   .card { grid-template-columns: 1fr; }
-  .btn { grid-column: 1; grid-row: auto; justify-content: center; margin-top: 10px; }
-  .help dl { grid-template-columns: 1fr; gap: 2px; }
-  .help dd { margin-bottom: 10px; }
-}
+  .btn { grid-column: 1; grid-row: auto; justify-content: center; margin-top: 10px; }}
 
 .theme-toggle {
-  position: fixed; top: 16px; right: 16px; z-index: 10;
+  position: absolute; top: 16px; right: 16px; z-index: 10;
   width: 40px; height: 40px; border-radius: 50%; padding: 0; cursor: pointer;
   display: inline-flex; align-items: center; justify-content: center;
   background: var(--surface); color: var(--ink); border: 1px solid var(--line);
@@ -225,18 +218,6 @@ footer p { margin: 6px 0; }
           </a>
         </article>
       </div>
-    </section>
-
-    <section class="help" aria-labelledby="help-heading">
-      <h2 id="help-heading">Getting it onto your reader</h2>
-      <dl>
-        <dt>Kobo</dt>
-        <dd>Connect by USB and copy the EPUB onto the device, or add it through Dropbox or Google Drive in the Kobo settings.</dd>
-        <dt>Kindle</dt>
-        <dd>Send the EPUB with Amazon's Send to Kindle (web, app, or email). Amazon converts it on the way.</dd>
-        <dt>Phone or tablet</dt>
-        <dd>Open the EPUB in Apple Books, Google Play Books, or any EPUB app, or use the PDF.</dd>
-      </dl>
     </section>
 
     <div class="read-online">
