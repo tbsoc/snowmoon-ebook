@@ -45,7 +45,7 @@ body {
   font: 17px/1.6 Georgia, "Iowan Old Style", "Palatino Linotype", serif;
 }
 a { color: var(--accent); }
-.wrap { max-width: 760px; margin: 0 auto; padding: 56px 16px 40px; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 56px 24px 40px; }
 
 header { text-align: center; margin-bottom: 44px; }
 .moon {
@@ -63,7 +63,7 @@ h1 { font-weight: normal; font-size: 2.6rem; letter-spacing: .14em; text-transfo
 .jump:hover { border-color: var(--accent); }
 
 .about {
-  display: grid; grid-template-columns: 1.6fr 1fr; gap: 28px;
+  display: grid; grid-template-columns: 1.5fr 1fr; gap: 64px;
   margin-bottom: 44px; padding-bottom: 36px; border-bottom: 1px solid var(--line);
 }
 .about p { margin: 0 0 12px; }
@@ -95,6 +95,8 @@ h2 {
 .btn:focus-visible { outline: 3px solid var(--moon-shade); outline-offset: 2px; }
 .btn svg { width: 16px; height: 16px; }
 
+/* Reading-width sections stay narrow and centered on wide screens */
+.help, .read-online, footer { max-width: 760px; margin-left: auto; margin-right: auto; }
 .help { display: grid; gap: 10px; margin-bottom: 44px; }
 .help dl { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 8px 18px; }
 .help dt { font-weight: 600; }
@@ -109,10 +111,20 @@ h2 {
 footer { color: var(--muted); font-size: .85rem; text-align: center; }
 footer p { margin: 6px 0; }
 
+/* Wide screens: the three editions side by side, each card stacked with its button at the bottom */
+@media (min-width: 900px) {
+  .downloads { grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .card { display: flex; flex-direction: column; align-items: stretch; gap: 8px; padding: 22px; }
+  .card .meta { margin-bottom: 8px; }
+  .btn { margin-top: auto; justify-content: center; }
+}
+/* Below this, two text columns get too narrow: stack the description and bio */
+@media (max-width: 899px) {
+  .about { grid-template-columns: 1fr; gap: 8px; max-width: 760px; margin-left: auto; margin-right: auto; }
+}
 @media (max-width: 560px) {
-  .wrap { padding-top: 40px; }
+  .wrap { padding: 40px 16px 40px; }
   h1 { font-size: 2rem; }
-  .about { grid-template-columns: 1fr; gap: 8px; }
   .card { grid-template-columns: 1fr; }
   .btn { grid-column: 1; grid-row: auto; justify-content: center; margin-top: 10px; }
   .help dl { grid-template-columns: 1fr; gap: 2px; }
