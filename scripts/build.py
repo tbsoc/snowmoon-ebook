@@ -3,6 +3,8 @@ print HTML (for PDF) and EPUB 3. Source: https://vitalik.eth.limo/snowmoon/"""
 import re, sys, json, shutil, uuid, zipfile, datetime, html
 from pathlib import Path
 from bs4 import BeautifulSoup
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import speakers
 
 SRC = Path(sys.argv[1])
 OUT = Path(sys.argv[2])
@@ -375,13 +377,26 @@ def swap_symbols(xhtml):
         return ">" + txt + "<"
     return re.sub(r">([^<]*)<", fix_text, xhtml)
 
+# Black-and-white edition: speaker colors vanish on grayscale, so label the lines where color
+# was the only cue to who is speaking (see speakers.py)
+LABEL_SPEAKERS = bool(IMG_DIR) and not COLOR
+SPEAKER_MAPS = speakers.learn({n: body for n, _, _, body in chapters}) if LABEL_SPEAKERS else {}
+speaker_stats = {}
+
 for n, t, _, body in chapters:
+    if LABEL_SPEAKERS:
+        body, speaker_stats[n] = speakers.label(body, SPEAKER_MAPS[n])
     b = xhtml_body(kobo_screens(n, swap_svgs(n, body)) if IMG_DIR else body)
     if IMG_DIR:
         b = swap_symbols(b)
     b = re.sub(r'href="#chapter-(\d+)"', r'href="chapter-\1.xhtml"', b)
     files[f"chapter-{n}.xhtml"] = (xpage(t, f'<section epub:type="chapter" class="chapter">{b}</section>'), "svg" if "<svg" in b else "")
-files["about.xhtml"] = (xpage("About this book", f'<section class="front"><h2>About this book</h2>{xhtml_body(DECL_HTML)}{xhtml_body(LICENSE_NOTE)}</section>'), "")
+SPEAKER_NOTE = ("<p>In the original, each character's dialogue has its own color. Because those colors are lost "
+                "on black-and-white screens, this edition adds a small speaker name, in "
+                "<span class=\"who\">capitals like this</span>, before lines in group conversations where "
+                "color was the only clue to who is speaking. These labels are editorial additions, not part "
+                "of the author's text.</p>") if LABEL_SPEAKERS else ""
+files["about.xhtml"] = (xpage("About this book", f'<section class="front"><h2>About this book</h2>{xhtml_body(DECL_HTML)}{xhtml_body(LICENSE_NOTE)}{SPEAKER_NOTE}</section>'), "")
 lic = html.escape(read(SRC / "LICENSE.txt"))
 files["license.xhtml"] = (xpage("License", f'<section class="front"><h2>GNU General Public License v3</h2><pre style="white-space:pre-wrap;font-size:.7em">{lic}</pre></section>'), "")
 
@@ -413,6 +428,9 @@ img.sym { display: inline; height: 1.34em; width: auto; vertical-align: -0.26em;
 .btn { display: inline-block; border: 1px solid #000; padding: .15em .7em; margin: .2em .2em .2em 0;
   font-family: sans-serif; font-size: .9em; background: #eee; }
 .caption { text-indent: 0; text-align: center; font-style: italic; font-size: .85em; margin-top: .4em; }
+/* Editorial speaker labels (B&W edition): small sans-serif capitals, distinct from the author's text */
+.who { font-family: sans-serif; font-size: .7em; font-weight: bold; text-transform: uppercase;
+  letter-spacing: .08em; color: #000; margin-right: .3em; }
 """
 
 COLOR_CSS = """
@@ -490,4 +508,7 @@ with zipfile.ZipFile(epub, "w") as z:
         w(f"OEBPS/{name}", content)
 
 print("chapters:", len(chapters))
+if LABEL_SPEAKERS:
+    print("speaker labels:", sum(s["labeled"] for s in speaker_stats.values()),
+          "unresolved (left unlabeled):", sum(s["unresolved"] for s in speaker_stats.values()))
 print("titles:", [c[1] for c in chapters][:3], "...")

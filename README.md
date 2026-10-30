@@ -34,6 +34,11 @@ turns into gray-on-gray on e-ink. This edition:
 - renders screens with color emoji or form controls (chapters 1, 7, 20) as images
 - swaps ✓, → and ≥ for inline glyph images, since Kobo's built-in fonts lack them
 - adds table grid lines that Kobo's renderer honors (`border` attributes, not just CSS)
+- adds small speaker labels (editorial, in sans-serif capitals) to dialogue in group conversations
+  where the original relies on each character's color alone to show who is speaking. Speakers are
+  inferred from the lines the author does tag; a color shared by two characters in a chapter is
+  left unlabeled. On author-tagged lines held out for testing, the labels are right 98.6% of the
+  time ([`scripts/speakers.py`](scripts/speakers.py))
 
 ### Color EPUB
 
