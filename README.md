@@ -17,7 +17,7 @@ same license, including the build scripts.
 | [`snowmoon.pdf`](snowmoon.pdf) | 6×9 in book layout with page numbers and chapter bookmarks |
 | [`snowmoon-complete.html`](snowmoon-complete.html) | All chapters on one page, with linked contents and dark-mode toggle |
 | [`html/`](html/index.html) | The author's original chapter pages, one per chapter, with a contents page |
-| [`guide.html`](guide.html) | Interactive reader's guide: characters, world, themes, timeline, glossary, and chapter summaries hidden behind click-to-reveal spoiler protection. Built by `scripts/build_guide.py` from `scripts/guide_template.html` and `scripts/guide_data/` |
+| [`guide.html`](guide.html) | Interactive reader's guide: characters, world, themes, timeline, glossary, with each chapter's summary hidden behind click-to-reveal spoiler protection in the timeline. Built by `scripts/build_guide.py` from `scripts/guide_template.html` and `scripts/guide_data/` |
 
 ### Black-and-white EPUB
 

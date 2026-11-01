@@ -144,15 +144,6 @@ h2 { font: 600 .78rem/1 system-ui, -apple-system, "Segoe UI", sans-serif; letter
 .spoiler.open p { margin: 0 0 10px; }
 .spoiler .label { font: 600 .72rem/1 system-ui, -apple-system, "Segoe UI", sans-serif; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; display: block; }
 
-/* Chapter by chapter */
-.toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; margin: 0 0 14px; }
-.toolbar .hint { font: .85rem/1.4 system-ui, -apple-system, "Segoe UI", sans-serif; color: var(--muted); }
-.chapters { display: grid; gap: 12px; }
-.chapter-row { background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--c); border-radius: 12px; padding: 16px 18px; }
-.chapter-row h3 { margin: 0; font-size: 1.1rem; }
-.chapter-row .meta { font: .8rem/1.4 system-ui, -apple-system, "Segoe UI", sans-serif; color: var(--muted); margin: 3px 0 0; }
-.chapter-row .hook { margin: 10px 0 0; }
-
 /* Glossary */
 .search { width: 100%; font: 1rem/1.4 system-ui, -apple-system, "Segoe UI", sans-serif; color: var(--ink); background: var(--surface);
   border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; margin-bottom: 12px; }
@@ -206,7 +197,6 @@ footer p { margin: 6px 0; }
       <li><a href="#world">The world</a></li>
       <li><a href="#themes">Themes</a></li>
       <li><a href="#timeline">Timeline</a></li>
-      <li><a href="#chapters">Chapters</a></li>
       <li><a href="#glossary">Glossary</a></li>
     </ul>
   </nav>
@@ -246,16 +236,6 @@ footer p { margin: 6px 0; }
       <div class="chips" id="tl-filter" role="group" aria-label="Show chapters from one storyline"></div>
       <div class="months" id="months"></div>
       <div class="detail" id="detail" aria-live="polite"></div>
-    </section>
-
-    <section class="block" id="chapters">
-      <h2>Chapter by chapter</h2>
-      <p class="lead">A short summary of every chapter. Summaries reveal what happens, so each one stays hidden until you choose to see it.</p>
-      <div class="toolbar">
-        <span class="hint" id="reveal-hint">Click "Show summary" on any chapter, or reveal them all.</span>
-        <button class="reveal" type="button" id="reveal-all"></button>
-      </div>
-      <div class="chapters" id="chapter-list"></div>
     </section>
 
     <section class="block" id="glossary">
@@ -404,23 +384,11 @@ footer p { margin: 6px 0; }
       box.append(el('div', { class: 'veil', 'aria-hidden': 'true' }, [el('span'), el('span'), el('span')]), show);
     }
   };
+  // Revealed chapters stay open while the reader steps through the timeline
   var setRevealed = function (n, on) {
     revealed[n] = on;
     document.querySelectorAll('.spoiler[data-chapter="' + n + '"]').forEach(function (b) { fillSpoiler(b, n); });
-    syncRevealAll();
   };
-  var revealAllBtn = document.getElementById('reveal-all');
-  var allOpen = function () { return D.timeline.every(function (t) { return !summaries[t.chapter] || revealed[t.chapter]; }); };
-  var syncRevealAll = function () {
-    revealAllBtn.innerHTML = '';
-    revealAllBtn.append(eye(), allOpen() ? 'Hide all summaries' : 'Reveal all summaries (spoilers)');
-  };
-  revealAllBtn.addEventListener('click', function () {
-    var on = !allOpen();
-    D.timeline.forEach(function (t) { revealed[t.chapter] = on; });
-    document.querySelectorAll('.spoiler[data-chapter]').forEach(function (b) { fillSpoiler(b, +b.getAttribute('data-chapter')); });
-    syncRevealAll();
-  });
 
   // ---- Timeline ----
   var monthsHost = document.getElementById('months'), detail = document.getElementById('detail');
@@ -473,18 +441,6 @@ footer p { margin: 6px 0; }
     buttons.forEach(function (b) { b.classList.toggle('dim', f !== 'All' && b.getAttribute('data-thread') !== f); });
   });
   select(1);
-
-  // ---- Chapter by chapter ----
-  var listHost = document.getElementById('chapter-list');
-  D.timeline.forEach(function (t) {
-    var th = threadOf(t.place);
-    listHost.appendChild(el('article', { class: 'chapter-row', style: '--c:' + THREADS[th].color, id: 'ch-' + t.chapter }, [
-      el('h3', { text: 'Chapter ' + t.chapter }),
-      el('div', { class: 'meta', text: t.place + ' · ' + t.month + ' ' + t.day + ', ' + t.year }),
-      hooks[t.chapter] ? el('p', { class: 'hook', text: hooks[t.chapter] }) : null,
-      spoilerBlock(t.chapter)]));
-  });
-  syncRevealAll();
 
   // ---- Glossary ----
   var gGrid = document.getElementById('gloss-grid'), gSearch = document.getElementById('gloss-search'), gCount = document.getElementById('gloss-count');
