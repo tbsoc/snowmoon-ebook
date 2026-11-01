@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Snowmoon — Reader's Guide</title>
+<meta name="description" content="A spoiler-free guide to Snowmoon by Vitalik Buterin: characters, world, themes, a timeline of the book and a glossary of its technologies.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='%23dfe8f5' stroke='%231d3557' stroke-width='2'/%3E%3C/svg%3E">
+<script>
+  try {
+    var saved = localStorage.getItem('theme');
+    if (saved === 'light' || saved === 'dark') document.documentElement.setAttribute('data-theme', saved);
+  } catch (e) {}
+</script>
+<style>
+:root {
+  --bg: #f6f4ef; --surface: #ffffff; --ink: #1b1f2a; --muted: #5b6272; --line: #e2ded4;
+  --accent: #1d3557; --accent-ink: #ffffff; --moon: #dfe8f5; --moon-shade: #c9d6ea;
+  --veridia: #2f7d6d; --dzego: #b04a3c; --freetown: #6a4fa3; --other: #6b7280;
+  --chip: #efece5;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0d1220; --surface: #151c2e; --ink: #e8ecf4; --muted: #9aa5ba; --line: #26304a;
+    --accent: #9fc0ef; --accent-ink: #0d1220; --moon: #e8eef8; --moon-shade: #c3cfe3;
+    --veridia: #5cc4ae; --dzego: #ec8a7a; --freetown: #b49cf0; --other: #9aa5ba; --chip: #1c2539;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0d1220; --surface: #151c2e; --ink: #e8ecf4; --muted: #9aa5ba; --line: #26304a;
+  --accent: #9fc0ef; --accent-ink: #0d1220; --moon: #e8eef8; --moon-shade: #c3cfe3;
+  --veridia: #5cc4ae; --dzego: #ec8a7a; --freetown: #b49cf0; --other: #9aa5ba; --chip: #1c2539;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 64px; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.6 Georgia, "Iowan Old Style", "Palatino Linotype", serif; }
+a { color: var(--accent); }
+.sans { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px 48px; position: relative; }
+
+/* Header */
+header { text-align: center; padding: 56px 0 28px; }
+.moon { width: 64px; height: 64px; margin: 0 auto 18px; border-radius: 50%;
+  background: radial-gradient(circle at 36% 34%, var(--moon) 0 55%, var(--moon-shade) 100%);
+  box-shadow: 0 0 0 1px var(--line), 0 0 34px 4px color-mix(in srgb, var(--moon) 35%, transparent); }
+h1 { font-weight: normal; font-size: 2.2rem; letter-spacing: .12em; text-transform: uppercase; margin: 0; }
+.subtitle { font-style: italic; color: var(--muted); margin: 6px 0 0; font-size: 1.1rem; }
+.spoiler-note { display: inline-block; margin-top: 16px; font: .85rem/1.4 system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--muted); background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 8px 14px; }
+.back { position: absolute; top: 22px; left: 24px; font: 600 .9rem/1 system-ui, -apple-system, "Segoe UI", sans-serif; text-decoration: none; }
+
+.theme-toggle { position: absolute; top: 16px; right: 24px; z-index: 10; width: 40px; height: 40px; border-radius: 50%;
+  padding: 0; cursor: pointer; display: inline-flex; align-items: center; justify-content: center;
+  background: var(--surface); color: var(--ink); border: 1px solid var(--line); }
+.theme-toggle:hover { border-color: var(--accent); }
+.theme-toggle:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid var(--moon-shade); outline-offset: 2px; }
+.theme-toggle svg { width: 18px; height: 18px; }
+.theme-toggle .icon-sun, .theme-toggle[data-mode="light"] .icon-moon { display: block; }
+.theme-toggle .icon-moon, .theme-toggle[data-mode="light"] .icon-sun { display: none; }
+.theme-toggle[data-mode="dark"] .icon-sun { display: block; }
+
+/* Section nav */
+nav.sections { position: sticky; top: 0; z-index: 5; background: color-mix(in srgb, var(--bg) 92%, transparent);
+  backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); margin: 0 -24px 36px; padding: 10px 24px; }
+nav.sections ul { list-style: none; margin: 0 auto; padding: 0; display: flex; gap: 6px; justify-content: center;
+  overflow-x: auto; scrollbar-width: none; max-width: 1080px; }
+nav.sections ul::-webkit-scrollbar { display: none; }
+nav.sections a { display: block; white-space: nowrap; text-decoration: none; color: var(--muted);
+  font: 600 .85rem/1 system-ui, -apple-system, "Segoe UI", sans-serif; padding: 9px 12px; border-radius: 999px; }
+nav.sections a:hover, nav.sections a.active { color: var(--ink); background: var(--chip); }
+
+section.block { margin-bottom: 64px; }
+h2 { font: 600 .78rem/1 system-ui, -apple-system, "Segoe UI", sans-serif; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--muted); margin: 0 0 8px; }
+.lead { font-size: 1.35rem; line-height: 1.4; margin: 0 0 22px; max-width: 40em; }
+
+/* At a glance */
+.facts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.fact { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px; }
+.fact .num { font-size: 1.7rem; line-height: 1.1; }
+.fact .label { color: var(--muted); font: .85rem/1.4 system-ui, -apple-system, "Segoe UI", sans-serif; margin-top: 4px; }
+.threads { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 14px; }
+.thread { background: var(--surface); border: 1px solid var(--line); border-top: 4px solid var(--c); border-radius: 12px; padding: 18px; }
+.thread h3 { margin: 0 0 4px; font-size: 1.1rem; }
+.thread p { margin: 0; color: var(--muted); font-size: .95rem; }
+
+/* Filter chips */
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 18px; }
+.chip { font: 600 .82rem/1 system-ui, -apple-system, "Segoe UI", sans-serif; color: var(--ink); background: var(--chip);
+  border: 1px solid var(--line); border-radius: 999px; padding: 8px 12px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
+.chip[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.dot { width: 10px; height: 10px; border-radius: 50%; background: var(--c, var(--other)); display: inline-block; flex: none; }
+
+/* Cards (characters, world, themes) */
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px; }
+.card h3 { margin: 0; font-size: 1.15rem; display: flex; align-items: center; gap: 8px; }
+.card .meta { font: .78rem/1.4 system-ui, -apple-system, "Segoe UI", sans-serif; color: var(--muted); margin: 4px 0 10px;
+  display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: center; }
+.card p { margin: 0; font-size: .97rem; }
+.tag { display: inline-flex; align-items: center; gap: 5px; }
+.voice { width: 12px; height: 12px; border-radius: 50%; display: inline-block; border: 1px solid color-mix(in srgb, var(--ink) 20%, transparent); }
+.empty { color: var(--muted); font-style: italic; }
+.themes .card h3 { font-size: 1.2rem; }
+.themes .where { font: .82rem/1.4 system-ui, -apple-system, "Segoe UI", sans-serif; color: var(--muted); margin-top: 10px; }
+
+/* Timeline */
+.legend { display: flex; flex-wrap: wrap; gap: 14px; margin: 0 0 14px; font: .85rem/1.4 system-ui, -apple-system, "Segoe UI", sans-serif; color: var(--muted); }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.months { display: grid; gap: 0; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: var(--surface); }
+.month { display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 14px; padding: 10px 16px; border-top: 1px solid var(--line); }
+.month:first-child { border-top: none; }
+.month .when { font: .85rem/1.3 system-ui, -apple-system, "Segoe UI", sans-serif; color: var(--muted); }
+.month .when b { color: var(--ink); font-weight: 600; display: block; font-size: .95rem; }
+.year-break { background: var(--chip); font: 600 .75rem/1 system-ui, -apple-system, "Segoe UI", sans-serif; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--muted); padding: 9px 16px; border-top: 1px solid var(--line); }
+.ch-list { display: flex; flex-wrap: wrap; gap: 8px; }
+.ch { width: 40px; height: 40px; border-radius: 10px; border: 2px solid var(--c); background: transparent; color: var(--ink);
+  font: 700 .9rem/1 system-ui, -apple-system, "Segoe UI", sans-serif; cursor: pointer; }
+.ch:hover { background: color-mix(in srgb, var(--c) 18%, transparent); }
+.ch[aria-pressed="true"] { background: var(--c); color: var(--surface); }
+.ch.dim { opacity: .18; }
+.detail { margin-top: 14px; background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--c, var(--line));
+  border-radius: 12px; padding: 18px 20px; min-height: 92px; }
+.detail .kicker { font: 600 .78rem/1 system-ui, -apple-system, "Segoe UI", sans-serif; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.detail h3 { margin: 6px 0 4px; font-size: 1.25rem; }
+.detail p { margin: 6px 0 0; }
+.detail .nav-row { display: flex; gap: 8px; margin-top: 12px; }
+.detail .nav-row button { font: 600 .82rem/1 system-ui, -apple-system, "Segoe UI", sans-serif; background: var(--chip); color: var(--ink);
+  border: 1px solid var(--line); border-radius: 8px; padding: 8px 12px; cursor: pointer; }
+.detail .nav-row button:disabled { opacity: .4; cursor: default; }
+
+/* Spoiler-protected summaries: text is not inserted into the page until revealed */
+.spoiler { margin-top: 12px; border: 1px dashed var(--line); border-radius: 10px; padding: 14px 16px; background: color-mix(in srgb, var(--chip) 60%, transparent); }
+.spoiler .veil { display: grid; gap: 7px; margin-bottom: 12px; }
+.spoiler .veil span { display: block; height: 9px; border-radius: 5px; background: color-mix(in srgb, var(--muted) 28%, transparent); }
+.spoiler .veil span:nth-child(2) { width: 92%; } .spoiler .veil span:nth-child(3) { width: 64%; }
+.reveal { font: 600 .85rem/1 system-ui, -apple-system, "Segoe UI", sans-serif; background: var(--surface); color: var(--ink);
+  border: 1px solid var(--line); border-radius: 8px; padding: 9px 12px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
+.reveal:hover { border-color: var(--accent); }
+.reveal svg { width: 15px; height: 15px; }
+.spoiler.open { border-style: solid; background: transparent; }
+.spoiler.open p { margin: 0 0 10px; }
+.spoiler .label { font: 600 .72rem/1 system-ui, -apple-system, "Segoe UI", sans-serif; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; display: block; }
+
+/* Chapter by chapter */
+.toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; margin: 0 0 14px; }
+.toolbar .hint { font: .85rem/1.4 system-ui, -apple-system, "Segoe UI", sans-serif; color: var(--muted); }
+.chapters { display: grid; gap: 12px; }
+.chapter-row { background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--c); border-radius: 12px; padding: 16px 18px; }
+.chapter-row h3 { margin: 0; font-size: 1.1rem; }
+.chapter-row .meta { font: .8rem/1.4 system-ui, -apple-system, "Segoe UI", sans-serif; color: var(--muted); margin: 3px 0 0; }
+.chapter-row .hook { margin: 10px 0 0; }
+
+/* Glossary */
+.search { width: 100%; font: 1rem/1.4 system-ui, -apple-system, "Segoe UI", sans-serif; color: var(--ink); background: var(--surface);
+  border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; margin-bottom: 12px; }
+.gloss { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.term h3 { font-size: 1.08rem; }
+.term .real { margin-top: 10px; font: .8rem/1.4 system-ui, -apple-system, "Segoe UI", sans-serif; color: var(--muted); }
+.term .real b { color: var(--ink); font-weight: 600; }
+.count { font: .85rem/1.4 system-ui, -apple-system, "Segoe UI", sans-serif; color: var(--muted); margin: 0 0 12px; }
+
+footer { color: var(--muted); font-size: .85rem; text-align: center; border-top: 1px solid var(--line); padding-top: 24px; max-width: 760px; margin: 0 auto; }
+footer p { margin: 6px 0; }
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+  .facts { grid-template-columns: repeat(2, 1fr); }
+  .threads { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .wrap { padding: 0 16px 40px; }
+  header { padding-top: 64px; }
+  .back { left: 16px; }
+  .theme-toggle { right: 16px; }
+  nav.sections { margin: 0 -16px 28px; padding: 8px 16px; }
+  nav.sections ul { justify-content: flex-start; }
+  h1 { font-size: 1.8rem; }
+  .lead { font-size: 1.15rem; }
+  .grid, .gloss { grid-template-columns: 1fr; }
+  .month { grid-template-columns: 1fr; gap: 8px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="./">← Download</a>
+  <button class="theme-toggle" type="button" aria-label="Switch to dark mode">
+    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+  </button>
+
+  <header>
+    <div class="moon" aria-hidden="true"></div>
+    <h1>Snowmoon</h1>
+    <p class="subtitle">A reader's guide</p>
+    <span class="spoiler-note">Spoiler-free unless you choose to reveal a chapter summary.</span>
+  </header>
+
+  <nav class="sections" aria-label="Guide sections">
+    <ul>
+      <li><a href="#glance">At a glance</a></li>
+      <li><a href="#characters">Characters</a></li>
+      <li><a href="#world">The world</a></li>
+      <li><a href="#themes">Themes</a></li>
+      <li><a href="#timeline">Timeline</a></li>
+      <li><a href="#chapters">Chapters</a></li>
+      <li><a href="#glossary">Glossary</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="block" id="glance">
+      <h2>At a glance</h2>
+      <p class="lead">A far-future political science-fiction novel that follows two people in two very different
+        societies, as a powerful empire leans on both.</p>
+      <div class="facts" id="facts"></div>
+      <div class="threads" id="threads"></div>
+    </section>
+
+    <section class="block" id="characters">
+      <h2>Characters</h2>
+      <p class="lead">Who you'll meet, as they are when the story begins.</p>
+      <div class="chips" id="char-filter" role="group" aria-label="Filter characters by storyline"></div>
+      <div class="grid" id="char-grid"></div>
+      <p class="count" id="char-note" style="margin-top:14px"></p>
+    </section>
+
+    <section class="block" id="world">
+      <h2>The world</h2>
+      <p class="lead">The nations, cities and institutions the story moves between.</p>
+      <div class="grid" id="world-grid"></div>
+    </section>
+
+    <section class="block themes" id="themes">
+      <h2>Themes</h2>
+      <p class="lead">The big questions the novel keeps returning to.</p>
+      <div class="grid" id="theme-grid"></div>
+    </section>
+
+    <section class="block" id="timeline">
+      <h2>Timeline</h2>
+      <p class="lead">Thirty-two chapters across a little over a year of the book's own calendar. Tap a chapter to see where and when it's set.</p>
+      <div class="chips" id="tl-filter" role="group" aria-label="Show chapters from one storyline"></div>
+      <div class="months" id="months"></div>
+      <div class="detail" id="detail" aria-live="polite"></div>
+    </section>
+
+    <section class="block" id="chapters">
+      <h2>Chapter by chapter</h2>
+      <p class="lead">A short summary of every chapter. Summaries reveal what happens, so each one stays hidden until you choose to see it.</p>
+      <div class="toolbar">
+        <span class="hint" id="reveal-hint">Click "Show summary" on any chapter, or reveal them all.</span>
+        <button class="reveal" type="button" id="reveal-all"></button>
+      </div>
+      <div class="chapters" id="chapter-list"></div>
+    </section>
+
+    <section class="block" id="glossary">
+      <h2>Glossary</h2>
+      <p class="lead">The technologies, institutions and ideas the book uses, in plain language.</p>
+      <input class="search" id="gloss-search" type="search" placeholder="Search terms, e.g. quadratic, privacy, Minpentai" aria-label="Search the glossary">
+      <div class="chips" id="gloss-filter" role="group" aria-label="Filter glossary by category"></div>
+      <p class="count" id="gloss-count"></p>
+      <div class="gloss" id="gloss-grid"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Guide written for these editions; <em>Snowmoon</em> © Vitalik Buterin, released under the
+      <a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU GPL v3</a>.</p>
+    <p><a href="./">Download the book</a> · <a href="https://vitalik.eth.limo/snowmoon/">Read it online at the original site</a></p>
+  </footer>
+</div>
+
+<script id="guide-data" type="application/json">{"timeline": [{"chapter": 1, "place": "Meldan, Veridia", "year": 3724, "month": "Snowmoon", "day": 3, "scene_places": [], "words": 4419}, {"chapter": 2, "place": "Pafogai Du, Dzego", "year": 3724, "month": "Snowmoon", "day": 5, "scene_places": [], "words": 3015}, {"chapter": 3, "place": "Meldan, Veridia", "year": 3724, "month": "Snowmoon", "day": 8, "scene_places": [], "words": 3627}, {"chapter": 4, "place": "Pafogai Du, Dzego", "year": 3724, "month": "Snowmoon", "day": 24, "scene_places": [], "words": 4372}, {"chapter": 5, "place": "Freetown, United Cities", "year": 3724, "month": "Rainmoon", "day": 11, "scene_places": [], "words": 2230}, {"chapter": 6, "place": "Meldan, Veridia", "year": 3724, "month": "Rainmoon", "day": 12, "scene_places": [], "words": 4008}, {"chapter": 7, "place": "Pafogai Du, Dzego", "year": 3724, "month": "Rainmoon", "day": 23, "scene_places": [], "words": 3412}, {"chapter": 8, "place": "Meldan, Veridia", "year": 3724, "month": "Rainmoon", "day": 26, "scene_places": [], "words": 3423}, {"chapter": 9, "place": "Pafogai Du, Dzego", "year": 3724, "month": "Rainmoon", "day": 28, "scene_places": [], "words": 3547}, {"chapter": 10, "place": "Freetown, United Cities", "year": 3724, "month": "Windmoon", "day": 24, "scene_places": ["Meldan, Veridia", "Pafogai Du, Dzego"], "words": 4211}, {"chapter": 11, "place": "Meldan, Veridia", "year": 3724, "month": "Bloomtime", "day": 15, "scene_places": [], "words": 3544}, {"chapter": 12, "place": "Sadzu Du, Dzego", "year": 3724, "month": "Grasstime", "day": 22, "scene_places": [], "words": 4081}, {"chapter": 13, "place": "Meldan, Veridia", "year": 3724, "month": "Harvestmoon", "day": 8, "scene_places": [], "words": 2424}, {"chapter": 14, "place": "Sadzu Du, Dzego", "year": 3724, "month": "Firemoon", "day": 10, "scene_places": [], "words": 3253}, {"chapter": 15, "place": "Freetown, United Cities", "year": 3724, "month": "Firemoon", "day": 17, "scene_places": ["Meldan, Veridia", "Pafogai Du, Dzego"], "words": 3236}, {"chapter": 16, "place": "Meldan, Veridia", "year": 3724, "month": "Firemoon", "day": 25, "scene_places": [], "words": 2357}, {"chapter": 17, "place": "Meldan, Veridia", "year": 3724, "month": "Fruitmoon", "day": 11, "scene_places": [], "words": 2553}, {"chapter": 18, "place": "Pafogai Du, Dzego", "year": 3724, "month": "Fruitmoon", "day": 18, "scene_places": [], "words": 3006}, {"chapter": 19, "place": "Pafogai Du, Dzego", "year": 3724, "month": "Grapetime", "day": 15, "scene_places": [], "words": 3591}, {"chapter": 20, "place": "Meldan, Veridia", "year": 3724, "month": "Mistime", "day": 10, "scene_places": [], "words": 3998}, {"chapter": 21, "place": "Meldan, Veridia", "year": 3724, "month": "Mistime", "day": 20, "scene_places": [], "words": 2506}, {"chapter": 22, "place": "Freetown, United Cities", "year": 3724, "month": "Mistime", "day": 22, "scene_places": [], "words": 3210}, {"chapter": 23, "place": "Pafogai Du, Dzego", "year": 3724, "month": "Mistime", "day": 22, "scene_places": [], "words": 2579}, {"chapter": 24, "place": "Pafogai Du, Dzego", "year": 3724, "month": "Mistime", "day": 27, "scene_places": [], "words": 2327}, {"chapter": 25, "place": "Pafogai Du, Dzego", "year": 3724, "month": "Frostime", "day": 1, "scene_places": [], "words": 2385}, {"chapter": 26, "place": "Veridia", "year": 3724, "month": "Frostime", "day": 5, "scene_places": ["Meldan, Veridia"], "words": 4300}, {"chapter": 27, "place": "Meldan, Veridia", "year": 3724, "month": "Frostime", "day": 7, "scene_places": [], "words": 4305}, {"chapter": 28, "place": "Meldan, Veridia", "year": 3724, "month": "Frostime", "day": 15, "scene_places": [], "words": 2411}, {"chapter": 29, "place": "Elenar Forest, Veridia", "year": 3725, "month": "Snowmoon", "day": 29, "scene_places": [], "words": 3422}, {"chapter": 30, "place": "Elenar Forest, Veridia", "year": 3725, "month": "Snowmoon", "day": 30, "scene_places": [], "words": 2327}, {"chapter": 31, "place": "Northglade, Veridia", "year": 3725, "month": "Rainmoon", "day": 2, "scene_places": [], "words": 2380}, {"chapter": 32, "place": "Meldan, Veridia", "year": 3725, "month": "Rainmoon", "day": 12, "scene_places": [], "words": 3545}], "voices": {"Seila": "oklch(0.627 0.111 253.3)", "Gladias": "oklch(0.746 0.150 93.3)", "Zven": "oklch(0.591 0.150 346.7)", "Fin": "oklch(0.638 0.106 80.0)", "Bai": "oklch(0.692 0.150 26.7)", "Jahn": "oklch(0.658 0.150 133.3)", "Zei": "oklch(0.591 0.150 346.7)", "Min": "oklch(0.571 0.150 173.3)", "Pelae": "oklch(0.583 0.133 213.3)", "Mov": "oklch(0.571 0.150 173.3)", "Chairman": "oklch(0.594 0.128 40.0)", "Ancus": "oklch(0.665 0.107 13.3)", "Lily": "oklch(0.725 0.138 160.0)", "Den": "oklch(0.708 0.129 53.3)", "Nine": "oklch(0.654 0.102 186.7)", "Delwart": "oklch(0.708 0.129 53.3)", "Hreda": "oklch(0.567 0.142 106.7)", "Deluin": "oklch(0.708 0.129 53.3)", "Utaku": "oklch(0.556 0.147 280.0)", "Febric": "oklch(0.638 0.106 80.0)", "Vil": "oklch(0.671 0.110 293.3)", "Verdow": "oklch(0.671 0.110 293.3)", "Evelor": "oklch(0.604 0.150 66.7)", "Lektor": "oklch(0.725 0.138 160.0)"}, "threadBlurbs": {"Veridia": "A lush, prosperous democracy that steers behaviour with taxes and subsidies instead of bans, and treats privacy as a public good. Gladias's story is set mostly in its capital, Meldan.", "Dzego": "A nation that lost a war a century ago and is still pressured by the Arctic Empire. Its people coordinate through anonymous networks and secret societies more than through their government. Zei's story is set here.", "Freetown": "A city in the United Cities, home to economics researcher Jahn, where the book's two storylines cross paths."}, "characters": [{"name": "Gladias", "thread": "Veridia", "importance": "main", "role": "A thoughtful 39-year-old Acolyte (trainee member) of the Order of Steering in Meldan, nearing the end of his training and judged on how well his audit votes predict those of senior members. A former hobby programmer who got into Steering through his interest in open software platforms.", "first_chapter": 1, "spoiler_safe": true}, {"name": "Seila", "thread": "Veridia", "importance": "main", "role": "Gladias's wife, a blogger who writes about economics and culture. With the children away at their co-parents' home, she sets off to see the United Cities for herself.", "first_chapter": 1, "spoiler_safe": true}, {"name": "Zei", "thread": "Dzego", "importance": "main", "role": "A teenage prodigy from Pafogai Du with a gift for physics and math. He competes in Minpentai, a strategy programming game, and hopes to win prize money to buy his mother a new computer.", "first_chapter": 2, "spoiler_safe": true}, {"name": "Mov", "thread": "Veridia", "importance": "main", "role": "Gladias's close friend and a fellow Order member with a strong streak of security paranoia. He keeps an eye out for his friend and enjoys the surveillance side of the job.", "first_chapter": 3, "spoiler_safe": true}, {"name": "Delwart", "thread": "Veridia", "importance": "main", "role": "An anonymous, well-informed stranger who somehow learns that Gladias belongs to the Order and asks to meet him. He argues that Veridia's Steering system nudges people far too much.", "first_chapter": 3, "spoiler_safe": true}, {"name": "Bai", "thread": "Dzego", "importance": "main", "role": "Zei's Minpentai rival (full name Bai Jahen), a sharp, teasing player who has beaten him in every previous meeting and never lets him forget it.", "first_chapter": 4, "spoiler_safe": true}, {"name": "Lily", "thread": "Veridia", "importance": "supporting", "role": "Gladias and Seila's daughter, a withdrawn girl who struggles at school and retreats into games on her hand device.", "first_chapter": 1, "spoiler_safe": true}, {"name": "Zven", "thread": "Veridia", "importance": "supporting", "role": "Gladias and Seila's energetic younger son, who adores his Uncle Vil.", "first_chapter": 1, "spoiler_safe": true}, {"name": "Febric", "thread": "Veridia", "importance": "supporting", "role": "A teenage boy from the family's co-family (the son of Vil and Daia) who spends half of each year in Gladias's household. A keen young programmer who is rarely without his compute box.", "first_chapter": 1, "spoiler_safe": true}, {"name": "Hreda", "thread": "Veridia", "importance": "supporting", "role": "Febric's sister from the co-family, who also lives with Gladias and Seila for half the year and attends an after-school number theory class.", "first_chapter": 1, "spoiler_safe": true}, {"name": "Jahn", "thread": "Freetown", "importance": "supporting", "role": "A Freetown local and economics researcher, and a friend Seila visits there. He gives her a local's view of the United Cities.", "first_chapter": 1, "spoiler_safe": true}, {"name": "Fin", "thread": "Dzego", "importance": "supporting", "role": "Zei's loyal best friend and classmate at the underground Decentralized University, interested in linguistics and the ongoing reform of the Dzegoban language.", "first_chapter": 2, "spoiler_safe": true}, {"name": "Lord Ephelion", "thread": "Arctic Empire", "importance": "supporting", "role": "The Arctic Empire's envoy to Veridia, a polished speaker who argues that economic growth matters more than Veridia's focus on well-being and urges young Veridians toward the Empire's vision.", "first_chapter": 3, "spoiler_safe": true}, {"name": "Mu", "thread": "Dzego", "importance": "supporting", "role": "An older woman who looks after Minpentai players in Pafogai Du and has close ties to the priests who set the tournament's rules. She is a mentor figure to Zei.", "first_chapter": 4, "spoiler_safe": true}, {"name": "Min", "thread": "Dzego", "importance": "supporting", "role": "Zei's warm and cheerful mother, whom he is eager to support.", "first_chapter": 5, "spoiler_safe": true}, {"name": "Verdow", "thread": "Veridia", "importance": "supporting", "role": "A Veridian senator who sits on the Parliament committee that interviews candidates for the Order of Steering.", "first_chapter": 8, "spoiler_safe": true}, {"name": "The Chairman", "thread": "Veridia", "importance": "supporting", "role": "The presiding chair of the Parliament committee that holds hearings for Order candidates, keeping order among the senators.", "first_chapter": 8, "spoiler_safe": true}, {"name": "Deluin", "thread": "Other", "importance": "supporting", "role": "A friendly older teenager from Redshire in the United Cities, a Minpentai player whom Zei meets later in the book.", "first_chapter": 12, "spoiler_safe": true}], "places": [{"name": "Veridia", "kind": "nation", "description": "A green, prosperous, privacy-minded country that shapes behavior mostly through taxes and subsidies rather than bans. Citizens vote on everything from building aesthetics to public goods using cryptographic tools.", "first_chapter": 1, "spoiler_safe": true}, {"name": "Meldan", "kind": "city", "description": "Veridia's capital, a city of tree-lined footpaths, sky bridges and carefully styled buildings. It includes the Kalimar district where Gladias lives.", "first_chapter": 1, "spoiler_safe": true}, {"name": "The Order of Steering", "kind": "institution", "description": "A decentralized, anonymity-protected body linked to the Veridian government that runs the country's tax rubrics. Keepers write the rubrics, Sentinels audit businesses against them, Acolytes are members in training, and retired members serve as public-facing Heralds.", "first_chapter": 1, "spoiler_safe": true}, {"name": "Greater Plum Harbor (GPH)", "kind": "faction", "description": "A walled, futuristic research enclave inside Veridia, treated as one company's private property, with its own uniform look and its own rules. Many Veridians resent it. It funds public projects to offset its taxes and has outposts in other countries.", "first_chapter": 3, "spoiler_safe": true}, {"name": "Dzego", "kind": "nation", "description": "A technologically ambitious nation under pressure from the Arctic Empire. It protects itself by spreading out its manufacturing and coordinating important decisions anonymously, a strategy its people sum up in a short slogan about growing roots without a head.", "first_chapter": 2, "spoiler_safe": true}, {"name": "Pafogai Du", "kind": "city", "description": "Zei's home city, a grid of low-rise streets full of small electronics shops and mini-factories. Its southern edge is marked by a mountain carved to look like a giant pyramid, which houses offices, businesses and the Minpentai arena.", "first_chapter": 2, "spoiler_safe": true}, {"name": "Sadzu Du", "kind": "city", "description": "Another Dzegojan city with its own mountain pyramid, which becomes a setting later in the book.", "first_chapter": 12, "spoiler_safe": true}, {"name": "Decentralized University (DU)", "kind": "institution", "description": "Dzego's underground university, whose classes meet in hidden rooms announced at the last minute through encrypted broadcasts. It is run anonymously and has no exposed leaders.", "first_chapter": 2, "spoiler_safe": true}, {"name": "The Bansunpei", "kind": "institution", "description": "A Dzegojan priesthood that keeps redesigning the Dzegoban language. Its latest experiment, tested on the public nationwide, makes writing more visual.", "first_chapter": 4, "spoiler_safe": true}, {"name": "The Arctic Empire", "kind": "nation", "description": "A powerful, growth-obsessed empire that builds fast and spreads propaganda abroad. It works to keep Dzego's industry and technology from advancing.", "first_chapter": 1, "spoiler_safe": true}, {"name": "The United Cities", "kind": "region", "description": "A network of cities, among them Freetown, Devanvil, Redshire and Inglewore, linked by a co-governance system in which each city elects a share of the seats in another's parliament.", "first_chapter": 1, "spoiler_safe": true}, {"name": "Freetown", "kind": "city", "description": "A sprawling, uneven city in the United Cities, where wealthy enclaves sit beside rundown neighborhoods. It is home to Jahn and the Freetown Economics Institute.", "first_chapter": 1, "spoiler_safe": true}], "glossary": [{"term": "\"Grow roots, no head\"", "category": "Culture & language", "definition": "Dzego's guiding strategy. It builds strength through small, spread-out factories and anonymous coordination by cryptography, so there are no exposed leaders or large factories for an enemy to hit.", "real_world_link": "decentralized resilience; distributed manufacturing", "first_chapter": 2, "spoiler_safe": true}, {"term": "Acolyte", "category": "Governance", "definition": "A trainee in the Order of Steering. Sentinels redo a random tenth of Acolyte audits, and a trainee must keep a high enough score for agreeing with them to earn full membership.", "real_world_link": null, "first_chapter": 1, "spoiler_safe": true}, {"term": "Aesthetics tax", "category": "Economics & funding", "definition": "The part of the land tax based on how much the public likes a building's appearance. Citizens chosen at random rate buildings, so attractive buildings pay less and can even get a slightly negative rate.", "real_world_link": "sortition; quadratic voting", "first_chapter": 1, "spoiler_safe": true}, {"term": "Anti-transmission foil", "category": "Technology", "definition": "A common material that lines rooms to block wireless signals. In Dzego it is part of everyday protection against surveillance.", "real_world_link": "Faraday cage", "first_chapter": 2, "spoiler_safe": true}, {"term": "Bansunpei", "category": "Culture & language", "definition": "A priesthood that keeps redesigning Dzegoban, the Dzego language, to make it more regular and useful, including reducing it to 256 root words and testing visual writing systems. It also reformed the world's clock.", "real_world_link": "constructed languages; language planning", "first_chapter": 4, "spoiler_safe": true}, {"term": "Citizens' assembly", "category": "Governance", "definition": "A group of ordinary citizens who meet to discuss an issue and give their views to the Order of Steering.", "real_world_link": "citizens' assemblies; deliberative democracy", "first_chapter": 3, "spoiler_safe": true}, {"term": "Co-families", "category": "Culture & language", "definition": "Two households that raise their children together, with all the kids living with one couple for six months and then moving to the other. The parents get alternating stretches of child-rearing and free time.", "real_world_link": null, "first_chapter": 1, "spoiler_safe": true}, {"term": "Composite land tax", "category": "Economics & funding", "definition": "Veridia's tax on land, made up of a base rate plus an aesthetics tax and other rubric-based charges. The total is public for every building, so developers have a reason to build things people like.", "real_world_link": "land value tax", "first_chapter": 1, "spoiler_safe": true}, {"term": "Cryptographic sortition", "category": "Governance", "definition": "Picking people at random for civic duties, such as rating buildings or serving as a Keeper, using a cryptographic lottery that nobody can rig. It is used across Veridia's institutions.", "real_world_link": "sortition; verifiable random functions", "first_chapter": 1, "spoiler_safe": true}, {"term": "Device attestation", "category": "Cryptography & privacy", "definition": "A cryptographic certificate showing that a device came from a known manufacturer and batch and runs approved software. Watches flag nearby devices that have none, since they could be spy hardware.", "real_world_link": "remote attestation; trusted hardware", "first_chapter": 1, "spoiler_safe": true}, {"term": "Emerald AI summary", "category": "Technology", "definition": "Emerald is the AI assistant on Gladias's hand device, which he talks to without making a sound through a band on his throat. It summarizes things, looks up information and helps with audits, though Gladias has to decide when to trust it.", "real_world_link": "AI assistants", "first_chapter": 1, "spoiler_safe": true}, {"term": "Graph Funding", "category": "Economics & funding", "definition": "Veridia's way of spending public money as a tree of categories, for example health, then airborne disease, then specific projects. At each branch a randomly chosen committee decides how to split the money among the options below it. It pays for things like education and open technology.", "real_world_link": null, "first_chapter": 1, "spoiler_safe": true}, {"term": "Heralds", "category": "Governance", "definition": "Order members picked at random each year to retire and act as public ambassadors. Once they no longer have power, they explain openly how the Order works.", "real_world_link": null, "first_chapter": 6, "spoiler_safe": true}, {"term": "Keeper", "category": "Governance", "definition": "An Order of Steering member who votes on the rubrics, the general rules that decide what gets taxed and by how much. Keepers are picked at random by a cryptographic network and debate and vote anonymously.", "real_world_link": "sortition", "first_chapter": 1, "spoiler_safe": true}, {"term": "Minpentai", "category": "Games", "definition": "Dzego's hugely popular competitive strategy game, played on a grid whose physics can be run backward, using walls, gliders, spaceships and 'symbols' that let a player see and build. Robed priests secretly add a surprise rule change to each tournament game.", "real_world_link": "cellular automata (e.g. Conway's Game of Life); reversible computing", "first_chapter": 2, "spoiler_safe": true}, {"term": "Open camera inspection", "category": "Cryptography & privacy", "definition": "In Dzego, anyone may take down a public security camera and inspect it, and volunteer clubs publish what they find. Combined with cryptographic logging, this keeps the camera network from being turned against its own people.", "real_world_link": "transparent surveillance; open audits", "first_chapter": 4, "spoiler_safe": true}, {"term": "Order of Steering", "category": "Governance", "definition": "A decentralized body tied to Veridia's government that runs the country's system of taxes and subsidies. Rather than banning things, it nudges behavior by making some activities cheaper and others more expensive.", "real_world_link": "Pigouvian taxes; sortition", "first_chapter": 1, "spoiler_safe": true}, {"term": "Privacy robes", "category": "Cryptography & privacy", "definition": "Loose dark-purple robes with a hood and face cover, worn with matching shoes that even out height and disguise how the wearer walks. They hide who someone is and protect Order members from being recognized and pressured.", "real_world_link": "anti-surveillance clothing", "first_chapter": 1, "spoiler_safe": true}, {"term": "Quadratic Funding", "category": "Economics & funding", "definition": "A national program in Veridia that adds public matching money to projects based on how many people donate to them. Projects with Steering-taxed income can win part of it back, but the system can be gamed.", "real_world_link": "quadratic funding", "first_chapter": 1, "spoiler_safe": true}, {"term": "Quadratic voting", "category": "Governance", "definition": "In the aesthetics vote, each person's ratings are rescaled so they average zero and their squares average one. Voting everything up, down or to the extreme gains nothing, so the best strategy is to rate each building as strongly as you honestly feel.", "real_world_link": "quadratic voting", "first_chapter": 1, "spoiler_safe": true}, {"term": "Reputation score", "category": "Cryptography & privacy", "definition": "A record of someone's trustworthiness that can be proven without revealing who they are, such as showing a score above 200 or using it as collateral for a loan or a hotel check-in. A separate academic reputation is earned only through serious intellectual work.", "real_world_link": "reputation systems; zero-knowledge credentials", "first_chapter": 1, "spoiler_safe": true}, {"term": "Sentinel", "category": "Governance", "definition": "An Order of Steering member who audits individual businesses and places each one on a specific tier of a rubric. Sentinels apply the rules that Keepers write.", "real_world_link": null, "first_chapter": 1, "spoiler_safe": true}, {"term": "Silverchat vs Bluewhale", "category": "Technology", "definition": "The two big social platforms. Silverchat is open, so people can build their own apps for it and take their data with them, while Bluewhale is closed, its algorithms are secret, and it limits outside access.", "real_world_link": "open protocols vs walled gardens; interoperability", "first_chapter": 3, "spoiler_safe": true}, {"term": "Task-guessing bounty", "category": "Cryptography & privacy", "definition": "A deliberate test of Order members' secrecy. Anyone can put down a deposit and guess what task a member is working on; a correct guess cuts the member's pay and gives the guesser half of it.", "real_world_link": "bug bounties; incentive design", "first_chapter": 1, "spoiler_safe": true}, {"term": "Tax rubric / tiers", "category": "Governance", "definition": "A scoring guide for one area, such as the social impact of public performances or how open a piece of software is. It sorts content into tiers, here from 1 to 5, with a higher tax rate at each step, and auditors look at earlier rulings to decide where something belongs.", "real_world_link": null, "first_chapter": 1, "spoiler_safe": true}, {"term": "Ticks and longhours", "category": "Culture & language", "definition": "The world's decimal clock: 100 ticks make a minute, 100 minutes a longhour, and 10 longhours a day. Times are written as tick counts, such as 70,000.", "real_world_link": "decimal time", "first_chapter": 1, "spoiler_safe": true}, {"term": "United Cities co-governance", "category": "Governance", "definition": "A system in which partner cities such as Freetown elect a share of each other's parliaments. The smaller city's share is reduced by a square-root formula based on the two cities' relative sizes.", "real_world_link": "federalism", "first_chapter": 2, "spoiler_safe": true}, {"term": "Zero-knowledge proofs / checks", "category": "Cryptography & privacy", "definition": "A cryptographic proof that a statement is true and reveals nothing else, for example that you hold a valid ticket or that a nearby drone is harmless. In the novel they run constantly, through watches, entry gates and payments.", "real_world_link": "zero-knowledge proofs", "first_chapter": 1, "spoiler_safe": true}, {"term": "Zipcoins", "category": "Economics & funding", "definition": "The digital currency used in Veridia and beyond (abbreviated zc). Payments, including the sales tax on them, go through a cryptographic network privately.", "real_world_link": "cryptocurrency; private payments", "first_chapter": 6, "spoiler_safe": true}], "themes": [{"title": "Nudging instead of banning", "summary": "Veridia hardly forbids anything. It shapes behavior through taxes, subsidies and public ratings. The novel asks whether that is gentle freedom or quiet manipulation, and who decides what counts as good for society.", "where_it_shows": "The aesthetics vote and Dreadknot's rubric tier (ch1); the debate over Steering's reach (ch3)"}, {"title": "Privacy as civic infrastructure", "summary": "Zero-knowledge checks, privacy robes and anonymous voting are what keep institutions honest and resistant to bribery. Privacy works as a public good, and people are paid or penalized to protect it.", "where_it_shows": "Zero-knowledge gates and the task-guessing bounty (ch1); Keeper anonymity and fresh robes (ch3)"}, {"title": "Decentralization as survival", "summary": "Dzego, under pressure from a powerful neighbor, avoids having leaders or targets an enemy can find. Small factories spread across the country, encrypted coordination and moving classrooms make up its defense.", "where_it_shows": "'Grow roots, no head' and DU's shifting classrooms (ch2); camera audits (ch5)"}, {"title": "Comfort versus ambition", "summary": "Veridia's green, gentle, present-focused society is set against the Arctic Empire's push for fast building, industry and longer lives. The novel takes the critique seriously while asking what such ambition costs.", "where_it_shows": "Arctic consul's poster in the Meldan tunnel (ch3)"}, {"title": "Information, entropy and reversibility", "summary": "Physics ideas come back as metaphors. Knowledge can be rearranged but not created for free, and anything that can be built can be taken apart. The same logic appears in classrooms, games and strategy.", "where_it_shows": "The DU thermodynamics lecture (ch2); Minpentai's reversible rules (ch4); language compression talk (ch4)"}, {"title": "Open versus closed technology", "summary": "Open platforms and open-source tools are presented as public goods that teach and empower people, while closed systems concentrate control. Tax policy is used to push companies toward openness.", "where_it_shows": "Silverchat vs Bluewhale and the openness rubric (ch3); open-source research at GPH (ch3)"}, {"title": "Cooperation and game theory in everyday life", "summary": "Characters treat relationships, rivalries and travel plans as strategy problems involving the prisoner's dilemma, the price of anarchy, and coordinating without talking. The book asks when self-interest and working together line up.", "where_it_shows": "Gladias's binomial estimate (ch1); the Minpentai tournament (ch4); the Freetown trip reasoning (ch5)"}, {"title": "Experimenting with institutions", "summary": "Each society works like a lab for mechanism design: sortition, quadratic voting, funding organized by category, cities sharing seats in each other's parliaments, and a language redesigned on purpose. The book shows both the elegance of these systems and how they break down.", "where_it_shows": "Veridia's tax system (ch1); United Cities co-governance (ch2, ch5); Bansunpei language reform (ch4)"}], "hooks": [{"chapter": 1, "hook": "On an ordinary day in Veridia's capital, trainee auditor Gladias has to rate a heavy-metal band for tax purposes, and an anonymous message afterward shows that someone has found out his secret role."}, {"chapter": 2, "hook": "In Dzego, teenage Minpentai player Zei goes to a physics lesson at a hidden university and finds out how real the danger from the Arctic Empire is."}, {"chapter": 3, "hook": "Gladias goes to meet his mysterious contact deep inside the walled Greater Plum Harbor enclave, where his trust in the Steering system is tested."}, {"chapter": 4, "hook": "Zei arrives at a high-stakes Minpentai tournament held inside a mountain carved into a pyramid, where his old rival Bai is waiting."}, {"chapter": 5, "hook": "A trip abroad to Freetown sets up a chance meeting that links the Dzego and Veridia storylines."}], "summaries": [{"chapter": 1, "summary": "In Meldan, Gladias, an Acolyte of the Order of Steering, casts a randomly assigned quadratic vote on a building's aesthetics tax, then attends a Dreadknot metal concert to judge which tier of the social-impact tax rubric the band belongs in; despite Emerald's unreliable analysis and the risk to his Acolyte prediction score, he votes Tier 3. Someone in the crowd shouts that he is an Order member, and he escapes by tricking a man into looking away, snatching his hand device, wiping its recent photos and videos, and fleeing while a stranger acts as a decoy. At home with Seila and the four children (Lily is upset about a failed history exam), the family eats takeout before the kids leave in four days for six months with their co-family, and Seila plans a trip to Freetown to see Jahn. During dinner an anonymous, reputation-verified sender messages Gladias saying they saw him at the concert and know he is in the Order, will not report him for the bounty, but have a request."}, {"chapter": 2, "summary": "In Pafogai Du, Zei tells his friend Fin he placed third in a Minpentai game, and the two head to a class of the Decentralized University (DU), whose location is only revealed by encrypted broadcast and is changed again at the last minute. Zei impresses the instructor by explaining why time-reversible physics means entropy cannot be reversed, but an explosion in the room where the class was originally scheduled shakes their room, and debris breaks Zei's arm. Afterward the instructor explains that the Arctic Empire aims to keep Dzego's industry and technology permanently weak, while Dzego answers with its 'grow roots, no head' strategy of distributed manufacturing and anonymous cryptographic coordination, and he warns that the attacks will likely worsen. Fin and Zei respond with the defiant vow that Dzego will rise again."}, {"chapter": 3, "summary": "Walking through Meldan, Gladias passes an Arctic Empire recruitment poster signed by its consul, Lord Ephelion, and meets his friend and fellow Order member Mov, who gives him a fresh privacy robe, explains a fight over taxing Bluewhale's newly closed API, and plans to shadow the meeting with the anonymous stranger. Gladias enters the walled enclave of Greater Plum Harbor, overhearing locals debate how it is penalized on land tax, and in a hidden booth meets the stranger, who names himself Delwart. Delwart praises Gladias's Tier 3 vote, argues that Steering lets prejudice override reasoned judgment, and urges him to become a Keeper instead of a Sentinel and vote to delete every rubric, part of a campaign to recruit Keepers for systemic change. He hints he can protect Gladias from those who might track him, gives him about a month to choose his track, and leaves, followed by a robed figure from the neighboring booth (later confirmed to be Mov)."}, {"chapter": 4, "summary": "Shifting between Fin and Zei in Pafogai Du, the chapter opens at a cafe where Zei studies Minpentai countermeasures, noting that time-reversible rules mean no defense is invincible, and Fin explains the Bansunpei's nationwide experiment with new visual writing systems for the next version of Dzegoban. With his arm healed, Zei enters the converted mountain pyramid for the Minpentai quarter-finals, greeted by his mentor Mu and taunted by his rival Bai, then learns he has been teamed with Bai. The two barely speak until Zei, after weakening one opponent, plants Bai's symbol inside the other opponent's base, letting the pair eliminate the first opponent and force the second to resign. Mu reveals that this round's secret rule change was non-random team selection, set up as a psychological test of cooperation that they passed; Bai apologizes, and Zei half-jokingly asks her to take him (and his mother) along on her next Redshire vacation."}, {"chapter": 5, "summary": "Zei, his mother Min, and Bai arrive in Freetown, United Cities, a sprawling, uneven city, after both teens won their semi-finals and set up a Minpentai final against each other; Zei frames the joint trip as a way out of the usual pre-match prisoner's dilemma, while Bai admits she simply wanted his company. At the Freetown Economics Institute, Zei and Bai meet Seila and her local friend Jahn and describe Dzego's struggle against Arctic attacks and its cryptographically audited surveillance cameras. The viewpoint then moves to Seila, who takes a call from Gladias; when he says someone suggested he become a Keeper, she backs the idea and proposes that one of his projects could be reshaping rubrics to help Dzego, and Gladias declares he will do it."}, {"chapter": 6, "summary": "From a sealed, foil-lined basement, Gladias tells Mov he is choosing the Keeper track; Mov suspects Delwart's influence and reports that by tailing Delwart he found him holding a string of meetings at GPH tea shops, likely recruiting other would-be Keepers, so the two agree to play along and watch. The next day Gladias and Mov attend a citizens' assembly on public spaces run by a Herald named Alagael, where a flu alert prompts calm precautions and Mov notes that a ground-floor-use rubric is being gamed. Gladias then runs into Febric at a restaurant, covers a payment shortfall with an anonymous reputation-backed loan, and climbs to the Order's tower, where he formally confirms his application to become a Keeper."}, {"chapter": 7, "summary": "On the eve of the Pafogai Du Minpentai final, Zei persuades Fin to skip his Bansunpei linguistics training and help build a practice pipeline, and the next day Zei, Fin, and Bai watch an Arctic strike destroy the city's largest, government-run chip fab, which Fin calls a failure of the 'no head' principle. The final's new rule gives each player a powerful AI whose reasoning the opponent can read, and Zei falls behind after taking the bait of a deliberate gap Bai left in her AI's defenses. He recovers by hiding key moves outside his AI's transcript and triggering a factory that launches attacks Bai cannot anticipate, and Bai resigns. Mu explains the priests' lesson that real power often depends on concealing one's thoughts, even from allies; the prizes include money Zei hopes to spend on a compute box for his mother, and Zei alone receives a dark purple letter marked for his eyes only, which he pockets unopened."}, {"chapter": 8, "summary": "With Seila traveling in Iptak, Gladias listens on the autobus to a debate in which VNU president Sylka defends Veridia's broader measures of well-being and Lord Ephelion argues that only economic and technological growth compounds over time, and Gladias privately judges Ephelion a gifted demagogue. At his Parliament committee hearing, Gladias answers questions about his background, faces hostile probing from Senator Papli about being out of touch with ordinary Veridians, and wins support from Senator Ancus; the committee splits ten to ten and the Chairman's tie-breaking vote admits him to the Order. He then hurries to Vil's house to comfort Lily, who is crying over another failed test, this time in civics, and Mov calls to say he has been randomly selected to become a Herald, losing his formal power but freeing him to help Gladias, who ends the day sharing the news of his acceptance with Seila."}, {"chapter": 9, "summary": "In Pafogai Du, Bai breaks down in front of Fin and reveals that her parents were killed in a lab explosion when she was small, leaving her to fend for herself; Fin cheers her up by explaining the history and design of the Dzegoban language. Meanwhile Zei is summoned deep inside the mountain pyramid by Den, a High Council member of the Kungaupei, Dzego's secret defense society, who saw in Zei's championship game an instinct for cryptography. Den takes him in a sealed car to a chip fab, showing him how a physical mixnet and random inspections keep hardware honest. Zei agrees to switch his studies to cryptography while continuing toward the Minpentai nationals, knowing he cannot tell his mother the truth."}, {"chapter": 10, "summary": "In Freetown, Jahn learns that prices are rising because the megacorps, worried about growing Arctic drone activity, are pooling revenue for defense and pressuring holdouts into joining. In Meldan, Gladias attends his first two Keeper meetings: in the first he argues that the cultural values rubric is punishing artists like Dreadknot for depicting violence, and in the second a hidden spy device is found and removed before the Keepers debate whether to exempt military hardware from the openness rubric, with no conclusion reached ahead of a vote months away. In Dzego, Zei loses a game to Bai but asks for her help at the nationals, then Den and Mu reveal to him that Minpentai is secretly military training for Dzego's future defenders, and Zei promises to keep it to himself."}, {"chapter": 11, "summary": "Gladias and Seila watch Zven's first Helisport game alongside their co-family partners Daia and Vil, who is suing a hedge fund he believes engineered his former employer's bankruptcy to dodge paying employees. While the other kids chase the obvious targets, Zven quietly finds a downed fourth redball and turns it in to win the game for his team. In a Keeper circle on air quality, Gladias pushes for stronger incentives, and the group debates Arctic pandemic risk, a Bluewhale-backed scheme to drain the quadratic funding round, and the privacy costs of wastewater scanning. Walking home with Seila, Gladias worries that many newer Keepers seem unconcerned about the Arctics and skeptical that public institutions can do much."}, {"chapter": 12, "summary": "Zei travels to the capital, Sadzu Du, for the Minpentai nationals, passing the site of another lab explosion blamed on the Arctics and meeting Deluin, one of four foreign contestants, from Redshire. Bai calls to reveal that Den's people have brought her to the city to take notes on the other players. In his first qualifying match, against Bo, the rule change moves the game onto a hex grid; drawing on a passage about reversible permutations in his cryptography textbook, Zei works out how to run the board backward to design gliders that create copies of his symbol. Using that trick he reveals Bo's base and destroys all of Bo's symbols to win."}, {"chapter": 13, "summary": "Gladias tells Delwart that many first-year Keepers share the push for fewer rubrics, and downplays his own worry about the Arctics. Mov then reports that, by listening through a booth wall, he caught Delwart coaching a Keeper from a different discussion group on the same hardware openness rubric, suggesting an organized network, and urges Gladias to demand answers. At a family dinner, an Arctic broadcast by Lord Ephelion attacking Veridian egalitarianism hijacks the restaurant screen, and Lily, upset after Hreda's strong exam result, seems strangely absorbed by it. In his final openness meeting before the vote, with most of the circle leaning toward exempting military and surveillance hardware, the now-suspicious Gladias proposes that everyone wait two months and see whether the Arctics strike Redshire before deciding."}, {"chapter": 14, "summary": "Bai, who has been scouting the other nationals contestants, warns Zei that his rivals are too impatient and urges him not to rush. In the semifinal against Gun, the new rules add shrines that keep filling the board with chaos and slash building resources; Gun gains the upper hand early, but Zei hides his last ship, builds a new one, and walls himself in to outlast Gun and win. Deluin wins the other semifinal through patient fortification, setting up a final between the two. Over tea, the two become friends, and Deluin invites Zei to Redshire, which Zei cannot afford, so they joke about whoever wins the final paying for the trip."}, {"chapter": 15, "summary": "The Arctic Empire invades and annexes Redshire in a lightning surprise attack, shooting down planes carrying the president, prime minister and most of parliament. In Freetown, Jahn and Utaku watch the news in shock; in Meldan, Seila confirms Jahn is safe while Gladias, now angry at Delwart, goes over with Mov how the Order's anonymous key system will stop Delwart from checking or controlling his vote. In Dzego, Zei learns that Deluin is alive but trapped in Redshire, sending messages through an Arctic soldier who hides them in his health data, and Zei suggests a better steganographic encoding that the soldier soon adopts. The nationals final is cancelled and Zei is named champion against his wishes, and Den tells him Dzego's shadow society must now come into the open, sending him back to Pafogai Du to work on its cryptographic infrastructure."}, {"chapter": 16, "summary": "Gladias confronts Delwart, who admits he was wrong about the Arctics and reveals he is part of an organized effort on behalf of Silverchat to sway Keepers against the rubrics; he urges Gladias to keep military hardware in the openness rubric and to travel to Dzego to learn from it. Gladias talks the idea over with Mov, then has lunch with Febric, who explains how Helisport's scoring was fixed and reports that Lily seems happier, and helps Gladias test his wallet's social recovery setup. At home, Gladias tells Seila he may go to Dzego; she has doubts but agrees, asking him to research first and promising to introduce him to Zei and Bai if he goes."}, {"chapter": 17, "summary": "In Meldan, Gladias visits Senator Verdow at the Veridian parliament to ask whether he should travel to Dzego. Verdow encourages the trip and promises introductions to Dzego officials, but is impressed to learn Gladias has an indirect link to Zei, a national-level Minpentai semifinal winner. A Graph Funding steward, Belgor, then explains how the system splits public funding decisions across a graph of randomly selected committees, and how open-sourcing defensive technology like pandemic protection keeps the world on a level playing field. At home, Febric and Hreda announce a winter exchange to Northglade near the Arctic border, and Gladias casts his first Keeper vote on the hardware-openness rubric, rejecting the military exclusion and backing the higher tax brackets and broader anti-repair rule."}, {"chapter": 18, "summary": "Gladias arrives in Pafogai Du, where Zei and Bai pick him up in one of the city's black privacy cars, whose cabins are randomly swapped in a tunnel so no one can track passengers. On a walk alone he notices how quickly the city has adapted to the Arctic threat: neck bands, privacy robes, and a physical mixnet for shipping goods so no single carrier knows both source and destination. Back at the hotel, Fin joins them and reveals that the Bansunpei, the group that iterates on the Dzegoban language, has paused its next language version and instead used its trusted channels to roll out privacy and security recommendations that swept the country within days. Fin argues that Dzego's real strength is its leaderless capacity to coordinate, which he believes will let it defeat the Arctics."}, {"chapter": 19, "summary": "Zei brings Gladias to a cafeteria inside Pafogai Du's mountain pyramid to meet Den of the Kungaupei, updating Gladias's watch so it recognizes Dzego's security devices. Before Den arrives, Zei receives an anonymous broadcast, paid for by burning zipcoins, from the Sadzu Du food court where he once ate with Deluin; it points to huge disguised files, which the pair download at the pyramid's grand library. The reconstructed files turn out to be an obfuscated language model that asks Zei to describe the day of his semifinal, and his detailed account of his courtyard meeting with Deluin unlocks a hidden letter. In it Deluin explains that the Arctics confiscated and backdoored Redshire's devices, that his Arctic-sympathizing parents are taking him into the Empire's core territory, and that he will play along to earn Arctic trust in the hope of helping Zei someday, warning this may be his last message."}, {"chapter": 20, "summary": "Seila wakes to news that the Arctic Empire has seized Northglade almost without resistance; Febric and Hreda are safe inside the Greater Plum Harbor, which the Arctics are treating as a neutral zone. Mov arrives, worried that the weaknesses that enabled the invasion run through all of Veridia, and recounts that Delwart admitted to Gladias he worked for Silverchat. Seila insists on investigating, and with Mov she visits Keepers Delwart had approached: Telroy and Balme each describe a Delwart with different views tailored to their rubric groups, while Lectoby, on the social media openness rubric, reports that no one in his group was ever contacted. Since that is the rubric Silverchat would care about most, Seila concludes that Delwart's Silverchat story is a cover and he does not work for them."}, {"chapter": 21, "summary": "Over dinner with Vil, Daia, Lily and Zven, Seila shares that Febric and Hreda are living as refugees in the Greater Plum Harbor with no way home yet, Vil describes Divergent's second appeal in the Jump lawsuit, and Zven guesses that the effort to manipulate the Order is the Arctics' doing. Later, Seila furiously confronts Gladias by call from Dzego: Delwart is not from Silverchat, the overheard Silverchat meeting was likely staged for Mov, and, tallying the evidence, she concludes Delwart is an Arctic agent working to weaken the Order by telling each Keeper what they want to hear. Gladias apologizes and promises no more secrets, explaining that Dzego's real defense is a shadow military trained through Minpentai and that he is urging them to help defend Veridia first. Seila warns that convincing Veridia's parliament to accept such help is the harder problem, and neither has a plan yet."}, {"chapter": 22, "summary": "In Freetown, Jahn notices the city's response to the Arctic threat: shelter advertisements, higher tolls to fund defense, and new roads that seem to quietly reward defense companies who sold shelter space to arm themselves. At the Economics Institute, he and Utaku discuss whether Freetown's market incentives are working and how the United Cities' early history, including voluntary migration between cities with different values, built lasting legitimacy. Zei then calls Jahn, whose earlier introduction connected Dzego with Freetown defense companies, and shows him a live operation in which Dzego drones trap an Arctic ground drone in Redshire, using it to practice survival before destroying it; Zei narrowly wins when Arctic reinforcements arrive. Zei explains that they smuggle data in and out of Redshire hidden in fake calls, and asks Jahn for an introduction to a different defense company, one stronger in airborne systems, to help capture an Arctic drone."}, {"chapter": 23, "summary": "In an underground cafeteria in the mountain pyramid, Gladias, Bai and Fin hear from an exhausted Zei that the Freetown drone partnership survived an Arctic ambush, and the group agrees that quick wins like this build trust, though the harder step will be winning over Veridia's institutions, which Seila is now pursuing through Senator Verdow. Fin tests Gladias's progress in Dzegoban with a passage on minimalism, and Zei shows he has learned how the Order of Steering, the Sentinels and the Courts work; Gladias shares that Vil's lawsuit ended with Divergent's appeal ruled bad faith and the payout tripled. That night Seila calls Gladias in a fury: she caught Lily cheering Arctic propaganda in an online group, and after a bitter fight Lily ran away, leaving her watch on a random bus. When Gladias says they both share the blame for Lily, Seila hangs up on him."}, {"chapter": 24, "summary": "After a sleepless night, Gladias asks Zven to stay in friendly contact with Lily and learn where she is, only to find Seila had already asked him to do exactly that. In the library, Bai comforts Gladias and shares how her own harsh, loveless childhood made the Arctic idea of love as a reward for winning work for her, though she concludes no single motivation suits everyone; she urges him to win against the Arctics as the only way to reunite his family. Gladias then proposes to Den, the Kungaupei leader, that Dzego spy on Veridia to expose the Arctic infiltration there, offering intelligence, Keeper contacts and shared responsibility with Verdow if the plan comes out. Den agrees, and when Gladias suggests backdooring the Dzego-made security cameras Veridia already uses, he points out that the Arctics have likely done the same thing already."}, {"chapter": 25, "summary": "In Pafogai Du, Zei beats Gladias at a circle-taking game and then explains the binary XOR strategy behind it, using it to frame a question: is the struggle for Veridia a game that rewards moving first, or one where a counter-strategy can win? They conclude they can run their own influence campaign aimed at Veridia's Courts, with the advantage that they only need to tell the truth. Zei reports that Dzego's backdoored update to Veridian security cameras has uncovered existing Arctic takeovers and identified more than a dozen judges, and on a call Senator Verdow proposes the ask: have the Courts declare the military in breach of the fourteenth Ground Law for failing to defend Northglade, and remove its leadership, and the parliament too if necessary."}, {"chapter": 26, "summary": "Gladias flies to Meldan with Zei, Bai and Den, translating the Dzegojan in-flight announcements on the way, and Verdow meets them with news that Lily has been found at an Arctic-run boarding school in Northglade; the Arctics are now courting Veridians with advanced longevity clinics, and Gladias is reunited with Seila. The next day Zei, Den and Mu run a drone mission to rescue Tafindel, the Redshire president's son, which goes badly when he is pulled back inside and Zei loses several drones, until Mu hijacks Redshire's streetlights and automated cars with borrowed admin passwords and Tafindel and his assistant are carried off and smuggled by sea to Arturia. Zei blames himself, but Den declares a win that shows the Arctics can be beaten. Meanwhile Gladias pitches the case against the military to five judges, who reject it as undemocratic and far too slow, with only Zevin, whose son is stuck in Northglade, quietly sympathetic, and Gladias concludes he needs a different strategy."}, {"chapter": 27, "summary": "After Gladias admits he thinks the court plan has failed, Seila proposes making it democratic: a huge Silverchat poll, its key questions about the parliament and the military hidden among hundreds of decoys, run so widely that everyone knows the results and knows that everyone else knows them. She, Gladias and Zei visit Silverchat founder Evelor in his hidden hilltop home; he agrees to run a one-million-zipcoin poll and suggests having top forecasting bots judge, through a privacy-preserving garbled-circuit computation, whether a Kungaupei-backed military would actually work, and the visit also turns into a debate about the Arctic worldview. On launch day the poll shows widespread dissatisfaction with the parliament, and the bots estimate that involving the Kungaupei while keeping the transition as smooth as possible gives Veridia its best odds, so the group prepares to file the case a few days later."}, {"chapter": 28, "summary": "With the case filed, the Veridian general Lektor visits Den, Zei, Bai and Mu to object to replacing the whole military, and is stunned to learn the Kungaupei carried out the Tafindel rescue. Bai changes course and proposes that Lektor himself take command with quiet Kungaupei support, and they hand him evidence of compromised generals plus drone exploits he can present as his own. Separately, Zven tells Gladias and Seila that Lily was put in detention for challenging an Arctic teacher and now wants to come home, though her boarding school will not let her leave. A few days later Lektor uses the evidence to expose the top general and the parliament's preferred replacement as compromised, and he becomes head general, ending the court fight and clearing the way for the battle for Northshore."}, {"chapter": 29, "summary": "Months later, in the Elenar Forest, Zei, Mu and Bai wait as Lektor's combined Veridian and Kungaupei forces prepare a night offensive into Northshore in four groups (North, Center, South and Naval), with Zei supervising drone tactics across all fronts. Group North wins an early clash, but when the main Arctic fleet engages, most of Zei's Redshire-derived tactics turn out to have been countered, and an Arctic missile strike, apparently guided by traitors, destroys a rear base, very likely killing Den. As Zei sinks into despair, Deluin, now a commander on the Arctic side, sends a signed message offering tactics to break through the southern flank he controls. On Bai's advice, rather than trusting him outright, Zei asks Deluin to prove himself by sending the raw weights of the Arctic drones' AI model."}, {"chapter": 30, "summary": "Deluin cannot provide the model weights, but he sends Zei access keys and proxy endpoints for the Arctic drone simulation environment. While Veridian forces slowly retreat through the night, Zei, Fin, Mu and Bansunpei researchers use the simulator to optimize printed adversarial patterns, and at sunrise soldiers stick them on the drones, leading the Arctic AI to mistake them for dogs and swinging casualty ratios heavily in Veridia's favor until the Arctics cut off simulator access. Deluin then sends coordinates of weak points on the southern flank, which Mu exploits to encircle the remaining Arctic fleet while Vakaria moves to retake Northglade. By that afternoon Northshore and the Arctic island of Thaldur are under Veridian control, and an exhausted Zei finally sleeps."}, {"chapter": 31, "summary": "On a mountaintop above liberated Northglade, Zei, Bai and Mu meet Deluin, who explains that he pretended to support the Arctics and used his parents' standing and his Minpentai record to become one of their commanders, finding them easy to fool because they value competence over loyalty. He urges sharing the captured Arctic technology openly with the world, but Mu reports that the Arctics have tripled their garrison in Redshire, and the group accepts Tafindel's proposal that the Arctics keep Redshire, Veridia keep Thaldur, and anyone who wants to leave either place may. Meanwhile Gladias and Seila enter the reopened Greater Plum Harbor and are finally reunited with Lily, Febric and Hreda, before Gladias leaves for a mountaintop military funeral for Den and the other fallen soldiers."}, {"chapter": 32, "summary": "Back in Meldan, where old security cameras are being taken down and Northglade's liberation is being celebrated, Gladias and Seila meet Verdow and Zei at parliament. Verdow warns that the victory is incomplete because the Arctics still hold Redshire and keep advancing, and the four discuss how to govern in an age of surveillance and AI: Zei argues for institutions that reward accurate predictions about the future, with competing AIs held to account, and Seila says Veridia must learn Dzego's balance of competition and cooperation. Verdow invites Zei to stay and help reform the government, mentions that Bai plans to spend a year in Thaldur studying the Arctics, and the chapter closes with the group on the parliament roof looking over Meldan, which Gladias calls home."}]}</script>
+<script>
+(function () {
+  var D = JSON.parse(document.getElementById('guide-data').textContent);
+  var THREADS = {
+    'Veridia': { color: 'var(--veridia)', blurb: D.threadBlurbs['Veridia'] },
+    'Dzego': { color: 'var(--dzego)', blurb: D.threadBlurbs['Dzego'] },
+    'Freetown': { color: 'var(--freetown)', blurb: D.threadBlurbs['Freetown'] },
+    'Other': { color: 'var(--other)' }
+  };
+  var threadOf = function (place) {
+    if (/Dzego/.test(place)) return 'Dzego';
+    if (/United Cities/.test(place)) return 'Freetown';
+    if (/Veridia/.test(place)) return 'Veridia';
+    return 'Other';
+  };
+  var el = function (tag, attrs, kids) {
+    var e = document.createElement(tag);
+    for (var k in attrs || {}) {
+      if (k === 'text') e.textContent = attrs[k];
+      else if (k === 'style') e.style.cssText = attrs[k];
+      else e.setAttribute(k, attrs[k]);
+    }
+    (kids || []).forEach(function (c) { if (c) e.appendChild(typeof c === 'string' ? document.createTextNode(c) : c); });
+    return e;
+  };
+  var chipGroup = function (host, options, onPick) {
+    options.forEach(function (o, i) {
+      var b = el('button', { class: 'chip', type: 'button', 'aria-pressed': i === 0 ? 'true' : 'false' },
+        [o.color ? el('span', { class: 'dot', style: '--c:' + o.color }) : null, o.label]);
+      b.addEventListener('click', function () {
+        host.querySelectorAll('.chip').forEach(function (c) { c.setAttribute('aria-pressed', 'false'); });
+        b.setAttribute('aria-pressed', 'true');
+        onPick(o.value);
+      });
+      host.appendChild(b);
+    });
+  };
+
+  // ---- At a glance ----
+  var places = {}; D.timeline.forEach(function (t) { places[t.place] = 1; });
+  var words = D.timeline.reduce(function (s, t) { return s + t.words; }, 0);
+  var monthsSpanned = []; D.timeline.forEach(function (t) { var k = t.year + ' ' + t.month; if (monthsSpanned.indexOf(k) < 0) monthsSpanned.push(k); });
+  [[D.timeline.length, 'chapters'], ['~' + Math.round(words / 1000) + 'k', 'words, about a 6–8 hour read'],
+   ['1 yr+', 'of story time, from ' + D.timeline[0].month + ' ' + D.timeline[0].year + ' to ' +
+     D.timeline[D.timeline.length - 1].month + ' ' + D.timeline[D.timeline.length - 1].year],
+   ['3', 'storylines, in Veridia, Dzego and Freetown']].forEach(function (f) {
+    document.getElementById('facts').appendChild(el('div', { class: 'fact' }, [el('div', { class: 'num', text: String(f[0]) }), el('div', { class: 'label', text: f[1] })]));
+  });
+  ['Veridia', 'Dzego', 'Freetown'].forEach(function (t) {
+    var n = D.timeline.filter(function (c) { return threadOf(c.place) === t; }).length;
+    document.getElementById('threads').appendChild(el('div', { class: 'thread', style: '--c:' + THREADS[t].color }, [
+      el('h3', { text: t === 'Freetown' ? 'Freetown, United Cities' : t }),
+      el('div', { class: 'label sans', style: 'color:var(--muted);font-size:.8rem;margin-bottom:6px', text: n + ' chapters set here' }),
+      el('p', { text: THREADS[t].blurb })]));
+  });
+
+  // ---- Characters ----
+  var charGrid = document.getElementById('char-grid');
+  var renderChars = function (filter) {
+    charGrid.innerHTML = '';
+    var list = D.characters.filter(function (c) { return filter === 'All' || c.thread === filter; });
+    list.forEach(function (c) {
+      var color = D.voices[c.name];
+      charGrid.appendChild(el('article', { class: 'card' }, [
+        el('h3', {}, [el('span', { class: 'dot', style: '--c:' + (THREADS[c.thread] || THREADS.Other).color }), c.name]),
+        el('div', { class: 'meta' }, [
+          el('span', { text: c.thread + ' · ' + (c.importance === 'main' ? 'Main character' : 'Supporting') }),
+          el('span', { text: 'First appears: ch. ' + c.first_chapter }),
+          color ? el('span', { class: 'tag', title: 'The color of this character\'s dialogue in the original' },
+            [el('span', { class: 'voice', style: 'background:' + color }), 'dialogue color']) : null]),
+        el('p', { text: c.role })]));
+    });
+    if (!list.length) charGrid.appendChild(el('p', { class: 'empty', text: 'No characters in this group.' }));
+  };
+  var charThreads = ['All'].concat(['Veridia', 'Dzego', 'Freetown', 'Arctic Empire', 'Other'].filter(function (t) {
+    return D.characters.some(function (c) { return c.thread === t; }); }));
+  chipGroup(document.getElementById('char-filter'), charThreads.map(function (t) {
+    return { label: t, value: t, color: t === 'All' ? null : (THREADS[t] || THREADS.Other).color }; }), renderChars);
+  renderChars('All');
+  document.getElementById('char-note').textContent = 'In the original, each character\'s dialogue appears in their own color; the small swatch shows it. Some minor characters share a color.';
+
+  // ---- World ----
+  D.places.forEach(function (p) {
+    document.getElementById('world-grid').appendChild(el('article', { class: 'card' }, [
+      el('h3', { text: p.name }),
+      el('div', { class: 'meta' }, [el('span', { text: p.kind.charAt(0).toUpperCase() + p.kind.slice(1) + ' · first appears ch. ' + p.first_chapter })]),
+      el('p', { text: p.description })]));
+  });
+
+  // ---- Themes ----
+  D.themes.forEach(function (t) {
+    document.getElementById('theme-grid').appendChild(el('article', { class: 'card' }, [
+      el('h3', { text: t.title }), el('p', { text: t.summary }), el('div', { class: 'where', text: t.where_it_shows })]));
+  });
+
+  // ---- Spoiler-protected summaries ----
+  // A summary's text is only put into the page once the reader asks for it (a blur alone can be
+  // read through, and screen readers would announce it).
+  var summaries = {}; D.summaries.forEach(function (s) { summaries[s.chapter] = s.summary; });
+  var revealed = {};
+  var eye = function () {
+    var s = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    s.setAttribute('viewBox', '0 0 24 24'); s.setAttribute('fill', 'none'); s.setAttribute('stroke', 'currentColor');
+    s.setAttribute('stroke-width', '2'); s.setAttribute('aria-hidden', 'true');
+    s.innerHTML = '<path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>';
+    return s;
+  };
+  var spoilerBlock = function (n) {
+    var box = el('div', { class: 'spoiler', 'data-chapter': n });
+    fillSpoiler(box, n);
+    return box;
+  };
+  var fillSpoiler = function (box, n) {
+    box.innerHTML = '';
+    if (!summaries[n]) { box.appendChild(el('p', { class: 'empty', text: 'Summary not available.' })); return; }
+    if (revealed[n]) {
+      box.classList.add('open');
+      var hide = el('button', { class: 'reveal', type: 'button', text: 'Hide summary' });
+      hide.addEventListener('click', function () { setRevealed(n, false); });
+      box.append(el('span', { class: 'label', text: 'Summary · contains spoilers' }), el('p', { text: summaries[n] }), hide);
+    } else {
+      box.classList.remove('open');
+      var show = el('button', { class: 'reveal', type: 'button', 'aria-label': 'Show the summary of chapter ' + n + ' (contains spoilers)' },
+        [eye(), 'Show summary (spoilers)']);
+      show.addEventListener('click', function () { setRevealed(n, true); });
+      box.append(el('div', { class: 'veil', 'aria-hidden': 'true' }, [el('span'), el('span'), el('span')]), show);
+    }
+  };
+  var setRevealed = function (n, on) {
+    revealed[n] = on;
+    document.querySelectorAll('.spoiler[data-chapter="' + n + '"]').forEach(function (b) { fillSpoiler(b, n); });
+    syncRevealAll();
+  };
+  var revealAllBtn = document.getElementById('reveal-all');
+  var allOpen = function () { return D.timeline.every(function (t) { return !summaries[t.chapter] || revealed[t.chapter]; }); };
+  var syncRevealAll = function () {
+    revealAllBtn.innerHTML = '';
+    revealAllBtn.append(eye(), allOpen() ? 'Hide all summaries' : 'Reveal all summaries (spoilers)');
+  };
+  revealAllBtn.addEventListener('click', function () {
+    var on = !allOpen();
+    D.timeline.forEach(function (t) { revealed[t.chapter] = on; });
+    document.querySelectorAll('.spoiler[data-chapter]').forEach(function (b) { fillSpoiler(b, +b.getAttribute('data-chapter')); });
+    syncRevealAll();
+  });
+
+  // ---- Timeline ----
+  var monthsHost = document.getElementById('months'), detail = document.getElementById('detail');
+  var hooks = {}; D.hooks.forEach(function (h) { hooks[h.chapter] = h.hook; });
+  var buttons = [];
+  var lastYear = null, byMonth = [];
+  D.timeline.forEach(function (t) {
+    var key = t.year + '|' + t.month, last = byMonth[byMonth.length - 1];
+    if (!last || last.key !== key) byMonth.push({ key: key, year: t.year, month: t.month, chapters: [t] }); else last.chapters.push(t);
+  });
+  byMonth.forEach(function (m) {
+    if (m.year !== lastYear) { monthsHost.appendChild(el('div', { class: 'year-break', text: 'Year ' + m.year })); lastYear = m.year; }
+    var first = m.chapters[0].day, lastDay = m.chapters[m.chapters.length - 1].day;
+    var list = el('div', { class: 'ch-list' });
+    m.chapters.forEach(function (t) {
+      var th = threadOf(t.place);
+      var b = el('button', { class: 'ch', type: 'button', 'aria-pressed': 'false', 'data-thread': th,
+        style: '--c:' + THREADS[th].color, 'aria-label': 'Chapter ' + t.chapter + ', ' + t.place, text: String(t.chapter) });
+      b.addEventListener('click', function () { select(t.chapter); });
+      buttons.push(b); list.appendChild(b);
+    });
+    monthsHost.appendChild(el('div', { class: 'month' }, [
+      el('div', { class: 'when' }, [el('b', { text: m.month }), m.chapters.length + (m.chapters.length > 1 ? ' chapters' : ' chapter') +
+        ' · day ' + (first === lastDay ? first : first + '–' + lastDay)]), list]));
+  });
+  var current = 1;
+  var select = function (n) {
+    current = n;
+    var t = D.timeline[n - 1], th = threadOf(t.place);
+    buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(+b.textContent === n)); });
+    detail.style.setProperty('--c', THREADS[th].color);
+    detail.innerHTML = '';
+    var prev = el('button', { type: 'button', text: '← Chapter ' + (n - 1) }), next = el('button', { type: 'button', text: 'Chapter ' + (n + 1) + ' →' });
+    if (n === 1) { prev.disabled = true; prev.textContent = '← Start'; }
+    if (n === D.timeline.length) { next.disabled = true; next.textContent = 'End →'; }
+    prev.addEventListener('click', function () { select(n - 1); });
+    next.addEventListener('click', function () { select(n + 1); });
+    var also = t.scene_places.filter(function (p) { return p !== t.place; });
+    detail.append(
+      el('div', { class: 'kicker', text: 'Chapter ' + n + ' · ' + (th === 'Freetown' ? 'Freetown storyline' : th + ' storyline') }),
+      el('h3', { text: t.place }),
+      el('div', { class: 'sans', style: 'color:var(--muted);font-size:.88rem', text: t.month + ' ' + t.day + ', year ' + t.year +
+        ' · about ' + (Math.round(t.words / 100) * 100).toLocaleString() + ' words' + (also.length ? ' · also cuts to ' + also.join(', ') : '') }),
+      hooks[n] ? el('p', { text: hooks[n] }) : null,
+      spoilerBlock(n),
+      el('div', { class: 'nav-row' }, [prev, next]));
+  };
+  chipGroup(document.getElementById('tl-filter'), [{ label: 'All storylines', value: 'All' }].concat(['Veridia', 'Dzego', 'Freetown'].map(function (t) {
+    return { label: t, value: t, color: THREADS[t].color }; })), function (f) {
+    buttons.forEach(function (b) { b.classList.toggle('dim', f !== 'All' && b.getAttribute('data-thread') !== f); });
+  });
+  select(1);
+
+  // ---- Chapter by chapter ----
+  var listHost = document.getElementById('chapter-list');
+  D.timeline.forEach(function (t) {
+    var th = threadOf(t.place);
+    listHost.appendChild(el('article', { class: 'chapter-row', style: '--c:' + THREADS[th].color, id: 'ch-' + t.chapter }, [
+      el('h3', { text: 'Chapter ' + t.chapter }),
+      el('div', { class: 'meta', text: t.place + ' · ' + t.month + ' ' + t.day + ', ' + t.year }),
+      hooks[t.chapter] ? el('p', { class: 'hook', text: hooks[t.chapter] }) : null,
+      spoilerBlock(t.chapter)]));
+  });
+  syncRevealAll();
+
+  // ---- Glossary ----
+  var gGrid = document.getElementById('gloss-grid'), gSearch = document.getElementById('gloss-search'), gCount = document.getElementById('gloss-count');
+  var gCat = 'All';
+  var cats = ['All'].concat(D.glossary.map(function (g) { return g.category; }).filter(function (c, i, a) { return a.indexOf(c) === i; }));
+  var renderGloss = function () {
+    var q = gSearch.value.trim().toLowerCase();
+    gGrid.innerHTML = '';
+    var list = D.glossary.filter(function (g) {
+      return (gCat === 'All' || g.category === gCat) &&
+        (!q || (g.term + ' ' + g.definition + ' ' + (g.real_world_link || '')).toLowerCase().indexOf(q) >= 0);
+    });
+    list.forEach(function (g) {
+      gGrid.appendChild(el('article', { class: 'card term' }, [
+        el('h3', { text: g.term }),
+        el('div', { class: 'meta' }, [el('span', { text: g.category + ' · first appears ch. ' + g.first_chapter })]),
+        el('p', { text: g.definition }),
+        g.real_world_link ? el('div', { class: 'real' }, ['Real-world idea: ', el('b', { text: g.real_world_link })]) : null]));
+    });
+    gCount.textContent = list.length + ' of ' + D.glossary.length + ' terms';
+    if (!list.length) gGrid.appendChild(el('p', { class: 'empty', text: 'No matching terms.' }));
+  };
+  chipGroup(document.getElementById('gloss-filter'), cats.map(function (c) { return { label: c, value: c }; }), function (c) { gCat = c; renderGloss(); });
+  gSearch.addEventListener('input', renderGloss);
+  renderGloss();
+
+  // ---- Section nav highlight ----
+  var links = document.querySelectorAll('nav.sections a');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) links.forEach(function (a) { a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id); });
+      });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    document.querySelectorAll('section.block').forEach(function (s) { io.observe(s); });
+  }
+
+  // ---- Theme toggle ----
+  var root = document.documentElement, tbtn = document.querySelector('.theme-toggle'), system = window.matchMedia('(prefers-color-scheme: dark)');
+  var mode = function () { var t = root.getAttribute('data-theme'); return t === 'light' || t === 'dark' ? t : (system.matches ? 'dark' : 'light'); };
+  var sync = function () { var m = mode(); tbtn.setAttribute('data-mode', m); tbtn.setAttribute('aria-label', m === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'); };
+  tbtn.addEventListener('click', function () {
+    var next = mode() === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch (e) {}
+    sync();
+  });
+  system.addEventListener('change', sync);
+  sync();
+})();
+</script>
+</body>
+</html>

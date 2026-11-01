@@ -1,0 +1,36 @@
+{
+ "chapters": [
+  {
+   "chapter": 25,
+   "summary": "In Pafogai Du, Zei beats Gladias at a circle-taking game and then explains the binary XOR strategy behind it, using it to frame a question: is the struggle for Veridia a game that rewards moving first, or one where a counter-strategy can win? They conclude they can run their own influence campaign aimed at Veridia's Courts, with the advantage that they only need to tell the truth. Zei reports that Dzego's backdoored update to Veridian security cameras has uncovered existing Arctic takeovers and identified more than a dozen judges, and on a call Senator Verdow proposes the ask: have the Courts declare the military in breach of the fourteenth Ground Law for failing to defend Northglade, and remove its leadership, and the parliament too if necessary."
+  },
+  {
+   "chapter": 26,
+   "summary": "Gladias flies to Meldan with Zei, Bai and Den, translating the Dzegojan in-flight announcements on the way, and Verdow meets them with news that Lily has been found at an Arctic-run boarding school in Northglade; the Arctics are now courting Veridians with advanced longevity clinics, and Gladias is reunited with Seila. The next day Zei, Den and Mu run a drone mission to rescue Tafindel, the Redshire president's son, which goes badly when he is pulled back inside and Zei loses several drones, until Mu hijacks Redshire's streetlights and automated cars with borrowed admin passwords and Tafindel and his assistant are carried off and smuggled by sea to Arturia. Zei blames himself, but Den declares a win that shows the Arctics can be beaten. Meanwhile Gladias pitches the case against the military to five judges, who reject it as undemocratic and far too slow, with only Zevin, whose son is stuck in Northglade, quietly sympathetic, and Gladias concludes he needs a different strategy."
+  },
+  {
+   "chapter": 27,
+   "summary": "After Gladias admits he thinks the court plan has failed, Seila proposes making it democratic: a huge Silverchat poll, its key questions about the parliament and the military hidden among hundreds of decoys, run so widely that everyone knows the results and knows that everyone else knows them. She, Gladias and Zei visit Silverchat founder Evelor in his hidden hilltop home; he agrees to run a one-million-zipcoin poll and suggests having top forecasting bots judge, through a privacy-preserving garbled-circuit computation, whether a Kungaupei-backed military would actually work, and the visit also turns into a debate about the Arctic worldview. On launch day the poll shows widespread dissatisfaction with the parliament, and the bots estimate that involving the Kungaupei while keeping the transition as smooth as possible gives Veridia its best odds, so the group prepares to file the case a few days later."
+  },
+  {
+   "chapter": 28,
+   "summary": "With the case filed, the Veridian general Lektor visits Den, Zei, Bai and Mu to object to replacing the whole military, and is stunned to learn the Kungaupei carried out the Tafindel rescue. Bai changes course and proposes that Lektor himself take command with quiet Kungaupei support, and they hand him evidence of compromised generals plus drone exploits he can present as his own. Separately, Zven tells Gladias and Seila that Lily was put in detention for challenging an Arctic teacher and now wants to come home, though her boarding school will not let her leave. A few days later Lektor uses the evidence to expose the top general and the parliament's preferred replacement as compromised, and he becomes head general, ending the court fight and clearing the way for the battle for Northshore."
+  },
+  {
+   "chapter": 29,
+   "summary": "Months later, in the Elenar Forest, Zei, Mu and Bai wait as Lektor's combined Veridian and Kungaupei forces prepare a night offensive into Northshore in four groups (North, Center, South and Naval), with Zei supervising drone tactics across all fronts. Group North wins an early clash, but when the main Arctic fleet engages, most of Zei's Redshire-derived tactics turn out to have been countered, and an Arctic missile strike, apparently guided by traitors, destroys a rear base, very likely killing Den. As Zei sinks into despair, Deluin, now a commander on the Arctic side, sends a signed message offering tactics to break through the southern flank he controls. On Bai's advice, rather than trusting him outright, Zei asks Deluin to prove himself by sending the raw weights of the Arctic drones' AI model."
+  },
+  {
+   "chapter": 30,
+   "summary": "Deluin cannot provide the model weights, but he sends Zei access keys and proxy endpoints for the Arctic drone simulation environment. While Veridian forces slowly retreat through the night, Zei, Fin, Mu and Bansunpei researchers use the simulator to optimize printed adversarial patterns, and at sunrise soldiers stick them on the drones, leading the Arctic AI to mistake them for dogs and swinging casualty ratios heavily in Veridia's favor until the Arctics cut off simulator access. Deluin then sends coordinates of weak points on the southern flank, which Mu exploits to encircle the remaining Arctic fleet while Vakaria moves to retake Northglade. By that afternoon Northshore and the Arctic island of Thaldur are under Veridian control, and an exhausted Zei finally sleeps."
+  },
+  {
+   "chapter": 31,
+   "summary": "On a mountaintop above liberated Northglade, Zei, Bai and Mu meet Deluin, who explains that he pretended to support the Arctics and used his parents' standing and his Minpentai record to become one of their commanders, finding them easy to fool because they value competence over loyalty. He urges sharing the captured Arctic technology openly with the world, but Mu reports that the Arctics have tripled their garrison in Redshire, and the group accepts Tafindel's proposal that the Arctics keep Redshire, Veridia keep Thaldur, and anyone who wants to leave either place may. Meanwhile Gladias and Seila enter the reopened Greater Plum Harbor and are finally reunited with Lily, Febric and Hreda, before Gladias leaves for a mountaintop military funeral for Den and the other fallen soldiers."
+  },
+  {
+   "chapter": 32,
+   "summary": "Back in Meldan, where old security cameras are being taken down and Northglade's liberation is being celebrated, Gladias and Seila meet Verdow and Zei at parliament. Verdow warns that the victory is incomplete because the Arctics still hold Redshire and keep advancing, and the four discuss how to govern in an age of surveillance and AI: Zei argues for institutions that reward accurate predictions about the future, with competing AIs held to account, and Seila says Veridia must learn Dzego's balance of competition and cooperation. Verdow invites Zei to stay and help reform the government, mentions that Bai plans to spend a year in Thaldur studying the Arctics, and the chapter closes with the group on the parliament roof looking over Meldan, which Gladias calls home."
+  }
+ ]
+}

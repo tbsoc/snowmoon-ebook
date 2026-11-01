@@ -1,0 +1,36 @@
+{
+ "chapters": [
+  {
+   "chapter": 9,
+   "summary": "In Pafogai Du, Bai breaks down in front of Fin and reveals that her parents were killed in a lab explosion when she was small, leaving her to fend for herself; Fin cheers her up by explaining the history and design of the Dzegoban language. Meanwhile Zei is summoned deep inside the mountain pyramid by Den, a High Council member of the Kungaupei, Dzego's secret defense society, who saw in Zei's championship game an instinct for cryptography. Den takes him in a sealed car to a chip fab, showing him how a physical mixnet and random inspections keep hardware honest. Zei agrees to switch his studies to cryptography while continuing toward the Minpentai nationals, knowing he cannot tell his mother the truth."
+  },
+  {
+   "chapter": 10,
+   "summary": "In Freetown, Jahn learns that prices are rising because the megacorps, worried about growing Arctic drone activity, are pooling revenue for defense and pressuring holdouts into joining. In Meldan, Gladias attends his first two Keeper meetings: in the first he argues that the cultural values rubric is punishing artists like Dreadknot for depicting violence, and in the second a hidden spy device is found and removed before the Keepers debate whether to exempt military hardware from the openness rubric, with no conclusion reached ahead of a vote months away. In Dzego, Zei loses a game to Bai but asks for her help at the nationals, then Den and Mu reveal to him that Minpentai is secretly military training for Dzego's future defenders, and Zei promises to keep it to himself."
+  },
+  {
+   "chapter": 11,
+   "summary": "Gladias and Seila watch Zven's first Helisport game alongside their co-family partners Daia and Vil, who is suing a hedge fund he believes engineered his former employer's bankruptcy to dodge paying employees. While the other kids chase the obvious targets, Zven quietly finds a downed fourth redball and turns it in to win the game for his team. In a Keeper circle on air quality, Gladias pushes for stronger incentives, and the group debates Arctic pandemic risk, a Bluewhale-backed scheme to drain the quadratic funding round, and the privacy costs of wastewater scanning. Walking home with Seila, Gladias worries that many newer Keepers seem unconcerned about the Arctics and skeptical that public institutions can do much."
+  },
+  {
+   "chapter": 12,
+   "summary": "Zei travels to the capital, Sadzu Du, for the Minpentai nationals, passing the site of another lab explosion blamed on the Arctics and meeting Deluin, one of four foreign contestants, from Redshire. Bai calls to reveal that Den's people have brought her to the city to take notes on the other players. In his first qualifying match, against Bo, the rule change moves the game onto a hex grid; drawing on a passage about reversible permutations in his cryptography textbook, Zei works out how to run the board backward to design gliders that create copies of his symbol. Using that trick he reveals Bo's base and destroys all of Bo's symbols to win."
+  },
+  {
+   "chapter": 13,
+   "summary": "Gladias tells Delwart that many first-year Keepers share the push for fewer rubrics, and downplays his own worry about the Arctics. Mov then reports that, by listening through a booth wall, he caught Delwart coaching a Keeper from a different discussion group on the same hardware openness rubric, suggesting an organized network, and urges Gladias to demand answers. At a family dinner, an Arctic broadcast by Lord Ephelion attacking Veridian egalitarianism hijacks the restaurant screen, and Lily, upset after Hreda's strong exam result, seems strangely absorbed by it. In his final openness meeting before the vote, with most of the circle leaning toward exempting military and surveillance hardware, the now-suspicious Gladias proposes that everyone wait two months and see whether the Arctics strike Redshire before deciding."
+  },
+  {
+   "chapter": 14,
+   "summary": "Bai, who has been scouting the other nationals contestants, warns Zei that his rivals are too impatient and urges him not to rush. In the semifinal against Gun, the new rules add shrines that keep filling the board with chaos and slash building resources; Gun gains the upper hand early, but Zei hides his last ship, builds a new one, and walls himself in to outlast Gun and win. Deluin wins the other semifinal through patient fortification, setting up a final between the two. Over tea, the two become friends, and Deluin invites Zei to Redshire, which Zei cannot afford, so they joke about whoever wins the final paying for the trip."
+  },
+  {
+   "chapter": 15,
+   "summary": "The Arctic Empire invades and annexes Redshire in a lightning surprise attack, shooting down planes carrying the president, prime minister and most of parliament. In Freetown, Jahn and Utaku watch the news in shock; in Meldan, Seila confirms Jahn is safe while Gladias, now angry at Delwart, goes over with Mov how the Order's anonymous key system will stop Delwart from checking or controlling his vote. In Dzego, Zei learns that Deluin is alive but trapped in Redshire, sending messages through an Arctic soldier who hides them in his health data, and Zei suggests a better steganographic encoding that the soldier soon adopts. The nationals final is cancelled and Zei is named champion against his wishes, and Den tells him Dzego's shadow society must now come into the open, sending him back to Pafogai Du to work on its cryptographic infrastructure."
+  },
+  {
+   "chapter": 16,
+   "summary": "Gladias confronts Delwart, who admits he was wrong about the Arctics and reveals he is part of an organized effort on behalf of Silverchat to sway Keepers against the rubrics; he urges Gladias to keep military hardware in the openness rubric and to travel to Dzego to learn from it. Gladias talks the idea over with Mov, then has lunch with Febric, who explains how Helisport's scoring was fixed and reports that Lily seems happier, and helps Gladias test his wallet's social recovery setup. At home, Gladias tells Seila he may go to Dzego; she has doubts but agrees, asking him to research first and promising to introduce him to Zei and Bai if he goes."
+  }
+ ]
+}

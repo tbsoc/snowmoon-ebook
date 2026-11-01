@@ -1,0 +1,250 @@
+{
+ "characters": [
+  {
+   "name": "Gladias",
+   "thread": "Veridia",
+   "importance": "main",
+   "role": "A thoughtful 39-year-old Acolyte (trainee member) of the Order of Steering in Meldan, nearing the end of his training and judged on how well his audit votes predict those of senior members. A former hobby programmer who got into Steering through his interest in open software platforms.",
+   "first_chapter": 1,
+   "spoiler_safe": true
+  },
+  {
+   "name": "Seila",
+   "thread": "Veridia",
+   "importance": "main",
+   "role": "Gladias's wife, a blogger who writes about economics and culture. With the children away at their co-parents' home, she sets off to see the United Cities for herself.",
+   "first_chapter": 1,
+   "spoiler_safe": true
+  },
+  {
+   "name": "Lily",
+   "thread": "Veridia",
+   "importance": "supporting",
+   "role": "Gladias and Seila's daughter, a withdrawn girl who struggles at school and retreats into games on her hand device.",
+   "first_chapter": 1,
+   "spoiler_safe": true
+  },
+  {
+   "name": "Zven",
+   "thread": "Veridia",
+   "importance": "supporting",
+   "role": "Gladias and Seila's energetic younger son, who adores his Uncle Vil.",
+   "first_chapter": 1,
+   "spoiler_safe": true
+  },
+  {
+   "name": "Febric",
+   "thread": "Veridia",
+   "importance": "supporting",
+   "role": "A teenage boy from the family's co-family (the son of Vil and Daia) who spends half of each year in Gladias's household. A keen young programmer who is rarely without his compute box.",
+   "first_chapter": 1,
+   "spoiler_safe": true
+  },
+  {
+   "name": "Hreda",
+   "thread": "Veridia",
+   "importance": "supporting",
+   "role": "Febric's sister from the co-family, who also lives with Gladias and Seila for half the year and attends an after-school number theory class.",
+   "first_chapter": 1,
+   "spoiler_safe": true
+  },
+  {
+   "name": "Mov",
+   "thread": "Veridia",
+   "importance": "main",
+   "role": "Gladias's close friend and a fellow Order member with a strong streak of security paranoia. He keeps an eye out for his friend and enjoys the surveillance side of the job.",
+   "first_chapter": 3,
+   "spoiler_safe": true
+  },
+  {
+   "name": "Delwart",
+   "thread": "Veridia",
+   "importance": "main",
+   "role": "An anonymous, well-informed stranger who somehow learns that Gladias belongs to the Order and asks to meet him. He argues that Veridia's Steering system nudges people far too much.",
+   "first_chapter": 3,
+   "spoiler_safe": true
+  },
+  {
+   "name": "Zei",
+   "thread": "Dzego",
+   "importance": "main",
+   "role": "A teenage prodigy from Pafogai Du with a gift for physics and math. He competes in Minpentai, a strategy programming game, and hopes to win prize money to buy his mother a new computer.",
+   "first_chapter": 2,
+   "spoiler_safe": true
+  },
+  {
+   "name": "Fin",
+   "thread": "Dzego",
+   "importance": "supporting",
+   "role": "Zei's loyal best friend and classmate at the underground Decentralized University, interested in linguistics and the ongoing reform of the Dzegoban language.",
+   "first_chapter": 2,
+   "spoiler_safe": true
+  },
+  {
+   "name": "Bai",
+   "thread": "Dzego",
+   "importance": "main",
+   "role": "Zei's Minpentai rival (full name Bai Jahen), a sharp, teasing player who has beaten him in every previous meeting and never lets him forget it.",
+   "first_chapter": 4,
+   "spoiler_safe": true
+  },
+  {
+   "name": "Min",
+   "thread": "Dzego",
+   "importance": "supporting",
+   "role": "Zei's warm and cheerful mother, whom he is eager to support.",
+   "first_chapter": 5,
+   "spoiler_safe": true
+  },
+  {
+   "name": "Mu",
+   "thread": "Dzego",
+   "importance": "supporting",
+   "role": "An older woman who looks after Minpentai players in Pafogai Du and has close ties to the priests who set the tournament's rules. She is a mentor figure to Zei.",
+   "first_chapter": 4,
+   "spoiler_safe": true
+  },
+  {
+   "name": "Jahn",
+   "thread": "Freetown",
+   "importance": "supporting",
+   "role": "A Freetown local and economics researcher, and a friend Seila visits there. He gives her a local's view of the United Cities.",
+   "first_chapter": 1,
+   "spoiler_safe": true
+  },
+  {
+   "name": "Lord Ephelion",
+   "thread": "Arctic Empire",
+   "importance": "supporting",
+   "role": "The Arctic Empire's envoy to Veridia, a polished speaker who argues that economic growth matters more than Veridia's focus on well-being and urges young Veridians toward the Empire's vision.",
+   "first_chapter": 3,
+   "spoiler_safe": true
+  },
+  {
+   "name": "Verdow",
+   "thread": "Veridia",
+   "importance": "supporting",
+   "role": "A Veridian senator who sits on the Parliament committee that interviews candidates for the Order of Steering.",
+   "first_chapter": 8,
+   "spoiler_safe": true
+  },
+  {
+   "name": "The Chairman",
+   "thread": "Veridia",
+   "importance": "supporting",
+   "role": "The presiding chair of the Parliament committee that holds hearings for Order candidates, keeping order among the senators.",
+   "first_chapter": 8,
+   "spoiler_safe": true
+  },
+  {
+   "name": "Deluin",
+   "thread": "Other",
+   "importance": "supporting",
+   "role": "A friendly older teenager from Redshire in the United Cities, a Minpentai player whom Zei meets later in the book.",
+   "first_chapter": 12,
+   "spoiler_safe": true
+  },
+  {
+   "name": "Den",
+   "thread": "Dzego",
+   "importance": "supporting",
+   "role": "A serious, purposeful Dzegojan who takes an interest in Zei's abilities. His true role is best discovered while reading.",
+   "first_chapter": 9,
+   "spoiler_safe": false
+  },
+  {
+   "name": "Lektor",
+   "thread": "Veridia",
+   "importance": "supporting",
+   "role": "A Veridian with a military background who enters the story near the end of the book.",
+   "first_chapter": 28,
+   "spoiler_safe": false
+  }
+ ],
+ "places_factions": [
+  {
+   "name": "Veridia",
+   "kind": "nation",
+   "description": "A green, prosperous, privacy-minded country that shapes behavior mostly through taxes and subsidies rather than bans. Citizens vote on everything from building aesthetics to public goods using cryptographic tools.",
+   "first_chapter": 1,
+   "spoiler_safe": true
+  },
+  {
+   "name": "Meldan",
+   "kind": "city",
+   "description": "Veridia's capital, a city of tree-lined footpaths, sky bridges and carefully styled buildings. It includes the Kalimar district where Gladias lives.",
+   "first_chapter": 1,
+   "spoiler_safe": true
+  },
+  {
+   "name": "The Order of Steering",
+   "kind": "institution",
+   "description": "A decentralized, anonymity-protected body linked to the Veridian government that runs the country's tax rubrics. Keepers write the rubrics, Sentinels audit businesses against them, Acolytes are members in training, and retired members serve as public-facing Heralds.",
+   "first_chapter": 1,
+   "spoiler_safe": true
+  },
+  {
+   "name": "Greater Plum Harbor (GPH)",
+   "kind": "faction",
+   "description": "A walled, futuristic research enclave inside Veridia, treated as one company's private property, with its own uniform look and its own rules. Many Veridians resent it. It funds public projects to offset its taxes and has outposts in other countries.",
+   "first_chapter": 3,
+   "spoiler_safe": true
+  },
+  {
+   "name": "Dzego",
+   "kind": "nation",
+   "description": "A technologically ambitious nation under pressure from the Arctic Empire. It protects itself by spreading out its manufacturing and coordinating important decisions anonymously, a strategy its people sum up in a short slogan about growing roots without a head.",
+   "first_chapter": 2,
+   "spoiler_safe": true
+  },
+  {
+   "name": "Pafogai Du",
+   "kind": "city",
+   "description": "Zei's home city, a grid of low-rise streets full of small electronics shops and mini-factories. Its southern edge is marked by a mountain carved to look like a giant pyramid, which houses offices, businesses and the Minpentai arena.",
+   "first_chapter": 2,
+   "spoiler_safe": true
+  },
+  {
+   "name": "Sadzu Du",
+   "kind": "city",
+   "description": "Another Dzegojan city with its own mountain pyramid, which becomes a setting later in the book.",
+   "first_chapter": 12,
+   "spoiler_safe": true
+  },
+  {
+   "name": "Decentralized University (DU)",
+   "kind": "institution",
+   "description": "Dzego's underground university, whose classes meet in hidden rooms announced at the last minute through encrypted broadcasts. It is run anonymously and has no exposed leaders.",
+   "first_chapter": 2,
+   "spoiler_safe": true
+  },
+  {
+   "name": "The Bansunpei",
+   "kind": "institution",
+   "description": "A Dzegojan priesthood that keeps redesigning the Dzegoban language. Its latest experiment, tested on the public nationwide, makes writing more visual.",
+   "first_chapter": 4,
+   "spoiler_safe": true
+  },
+  {
+   "name": "The Arctic Empire",
+   "kind": "nation",
+   "description": "A powerful, growth-obsessed empire that builds fast and spreads propaganda abroad. It works to keep Dzego's industry and technology from advancing.",
+   "first_chapter": 1,
+   "spoiler_safe": true
+  },
+  {
+   "name": "The United Cities",
+   "kind": "region",
+   "description": "A network of cities, among them Freetown, Devanvil, Redshire and Inglewore, linked by a co-governance system in which each city elects a share of the seats in another's parliament.",
+   "first_chapter": 1,
+   "spoiler_safe": true
+  },
+  {
+   "name": "Freetown",
+   "kind": "city",
+   "description": "A sprawling, uneven city in the United Cities, where wealthy enclaves sit beside rundown neighborhoods. It is home to Jahn and the Freetown Economics Institute.",
+   "first_chapter": 1,
+   "spoiler_safe": true
+  }
+ ]
+}

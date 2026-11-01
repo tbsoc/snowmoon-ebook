@@ -1,0 +1,352 @@
+{
+ "timeline": [
+  {
+   "chapter": 1,
+   "place": "Meldan, Veridia",
+   "year": 3724,
+   "month": "Snowmoon",
+   "day": 3,
+   "scene_places": [],
+   "words": 4419
+  },
+  {
+   "chapter": 2,
+   "place": "Pafogai Du, Dzego",
+   "year": 3724,
+   "month": "Snowmoon",
+   "day": 5,
+   "scene_places": [],
+   "words": 3015
+  },
+  {
+   "chapter": 3,
+   "place": "Meldan, Veridia",
+   "year": 3724,
+   "month": "Snowmoon",
+   "day": 8,
+   "scene_places": [],
+   "words": 3627
+  },
+  {
+   "chapter": 4,
+   "place": "Pafogai Du, Dzego",
+   "year": 3724,
+   "month": "Snowmoon",
+   "day": 24,
+   "scene_places": [],
+   "words": 4372
+  },
+  {
+   "chapter": 5,
+   "place": "Freetown, United Cities",
+   "year": 3724,
+   "month": "Rainmoon",
+   "day": 11,
+   "scene_places": [],
+   "words": 2230
+  },
+  {
+   "chapter": 6,
+   "place": "Meldan, Veridia",
+   "year": 3724,
+   "month": "Rainmoon",
+   "day": 12,
+   "scene_places": [],
+   "words": 4008
+  },
+  {
+   "chapter": 7,
+   "place": "Pafogai Du, Dzego",
+   "year": 3724,
+   "month": "Rainmoon",
+   "day": 23,
+   "scene_places": [],
+   "words": 3412
+  },
+  {
+   "chapter": 8,
+   "place": "Meldan, Veridia",
+   "year": 3724,
+   "month": "Rainmoon",
+   "day": 26,
+   "scene_places": [],
+   "words": 3423
+  },
+  {
+   "chapter": 9,
+   "place": "Pafogai Du, Dzego",
+   "year": 3724,
+   "month": "Rainmoon",
+   "day": 28,
+   "scene_places": [],
+   "words": 3547
+  },
+  {
+   "chapter": 10,
+   "place": "Freetown, United Cities",
+   "year": 3724,
+   "month": "Windmoon",
+   "day": 24,
+   "scene_places": [
+    "Meldan, Veridia",
+    "Pafogai Du, Dzego"
+   ],
+   "words": 4211
+  },
+  {
+   "chapter": 11,
+   "place": "Meldan, Veridia",
+   "year": 3724,
+   "month": "Bloomtime",
+   "day": 15,
+   "scene_places": [],
+   "words": 3544
+  },
+  {
+   "chapter": 12,
+   "place": "Sadzu Du, Dzego",
+   "year": 3724,
+   "month": "Grasstime",
+   "day": 22,
+   "scene_places": [],
+   "words": 4081
+  },
+  {
+   "chapter": 13,
+   "place": "Meldan, Veridia",
+   "year": 3724,
+   "month": "Harvestmoon",
+   "day": 8,
+   "scene_places": [],
+   "words": 2424
+  },
+  {
+   "chapter": 14,
+   "place": "Sadzu Du, Dzego",
+   "year": 3724,
+   "month": "Firemoon",
+   "day": 10,
+   "scene_places": [],
+   "words": 3253
+  },
+  {
+   "chapter": 15,
+   "place": "Freetown, United Cities",
+   "year": 3724,
+   "month": "Firemoon",
+   "day": 17,
+   "scene_places": [
+    "Meldan, Veridia",
+    "Pafogai Du, Dzego"
+   ],
+   "words": 3236
+  },
+  {
+   "chapter": 16,
+   "place": "Meldan, Veridia",
+   "year": 3724,
+   "month": "Firemoon",
+   "day": 25,
+   "scene_places": [],
+   "words": 2357
+  },
+  {
+   "chapter": 17,
+   "place": "Meldan, Veridia",
+   "year": 3724,
+   "month": "Fruitmoon",
+   "day": 11,
+   "scene_places": [],
+   "words": 2553
+  },
+  {
+   "chapter": 18,
+   "place": "Pafogai Du, Dzego",
+   "year": 3724,
+   "month": "Fruitmoon",
+   "day": 18,
+   "scene_places": [],
+   "words": 3006
+  },
+  {
+   "chapter": 19,
+   "place": "Pafogai Du, Dzego",
+   "year": 3724,
+   "month": "Grapetime",
+   "day": 15,
+   "scene_places": [],
+   "words": 3591
+  },
+  {
+   "chapter": 20,
+   "place": "Meldan, Veridia",
+   "year": 3724,
+   "month": "Mistime",
+   "day": 10,
+   "scene_places": [],
+   "words": 3998
+  },
+  {
+   "chapter": 21,
+   "place": "Meldan, Veridia",
+   "year": 3724,
+   "month": "Mistime",
+   "day": 20,
+   "scene_places": [],
+   "words": 2506
+  },
+  {
+   "chapter": 22,
+   "place": "Freetown, United Cities",
+   "year": 3724,
+   "month": "Mistime",
+   "day": 22,
+   "scene_places": [],
+   "words": 3210
+  },
+  {
+   "chapter": 23,
+   "place": "Pafogai Du, Dzego",
+   "year": 3724,
+   "month": "Mistime",
+   "day": 22,
+   "scene_places": [],
+   "words": 2579
+  },
+  {
+   "chapter": 24,
+   "place": "Pafogai Du, Dzego",
+   "year": 3724,
+   "month": "Mistime",
+   "day": 27,
+   "scene_places": [],
+   "words": 2327
+  },
+  {
+   "chapter": 25,
+   "place": "Pafogai Du, Dzego",
+   "year": 3724,
+   "month": "Frostime",
+   "day": 1,
+   "scene_places": [],
+   "words": 2385
+  },
+  {
+   "chapter": 26,
+   "place": "Veridia",
+   "year": 3724,
+   "month": "Frostime",
+   "day": 5,
+   "scene_places": [
+    "Meldan, Veridia"
+   ],
+   "words": 4300
+  },
+  {
+   "chapter": 27,
+   "place": "Meldan, Veridia",
+   "year": 3724,
+   "month": "Frostime",
+   "day": 7,
+   "scene_places": [],
+   "words": 4305
+  },
+  {
+   "chapter": 28,
+   "place": "Meldan, Veridia",
+   "year": 3724,
+   "month": "Frostime",
+   "day": 15,
+   "scene_places": [],
+   "words": 2411
+  },
+  {
+   "chapter": 29,
+   "place": "Elenar Forest, Veridia",
+   "year": 3725,
+   "month": "Snowmoon",
+   "day": 29,
+   "scene_places": [],
+   "words": 3422
+  },
+  {
+   "chapter": 30,
+   "place": "Elenar Forest, Veridia",
+   "year": 3725,
+   "month": "Snowmoon",
+   "day": 30,
+   "scene_places": [],
+   "words": 2327
+  },
+  {
+   "chapter": 31,
+   "place": "Northglade, Veridia",
+   "year": 3725,
+   "month": "Rainmoon",
+   "day": 2,
+   "scene_places": [],
+   "words": 2380
+  },
+  {
+   "chapter": 32,
+   "place": "Meldan, Veridia",
+   "year": 3725,
+   "month": "Rainmoon",
+   "day": 12,
+   "scene_places": [],
+   "words": 3545
+  }
+ ],
+ "colors": {
+  "Seila": "oklch(0.627 0.111 253.3)",
+  "Gladias": "oklch(0.746 0.150 93.3)",
+  "Zven": "oklch(0.591 0.150 346.7)",
+  "Fin": "oklch(0.638 0.106 80.0)",
+  "Bai": "oklch(0.692 0.150 26.7)",
+  "Jahn": "oklch(0.658 0.150 133.3)",
+  "Zei": "oklch(0.591 0.150 346.7)",
+  "Min": "oklch(0.571 0.150 173.3)",
+  "Pelae": "oklch(0.583 0.133 213.3)",
+  "Mov": "oklch(0.571 0.150 173.3)",
+  "Chairman": "oklch(0.594 0.128 40.0)",
+  "Ancus": "oklch(0.665 0.107 13.3)",
+  "Lily": "oklch(0.725 0.138 160.0)",
+  "Den": "oklch(0.708 0.129 53.3)",
+  "Nine": "oklch(0.654 0.102 186.7)",
+  "Delwart": "oklch(0.708 0.129 53.3)",
+  "Hreda": "oklch(0.567 0.142 106.7)",
+  "Deluin": "oklch(0.708 0.129 53.3)",
+  "Utaku": "oklch(0.556 0.147 280.0)",
+  "Febric": "oklch(0.638 0.106 80.0)",
+  "Vil": "oklch(0.671 0.110 293.3)",
+  "Verdow": "oklch(0.671 0.110 293.3)",
+  "Evelor": "oklch(0.604 0.150 66.7)",
+  "Lektor": "oklch(0.725 0.138 160.0)"
+ },
+ "color_counts": {
+  "Seila": 17,
+  "Gladias": 15,
+  "Zven": 1,
+  "Fin": 5,
+  "Bai": 15,
+  "Jahn": 4,
+  "Zei": 14,
+  "Min": 1,
+  "Pelae": 1,
+  "Mov": 3,
+  "Chairman": 1,
+  "Ancus": 1,
+  "Lily": 2,
+  "Den": 4,
+  "Nine": 1,
+  "Delwart": 1,
+  "Hreda": 3,
+  "Deluin": 2,
+  "Utaku": 1,
+  "Febric": 1,
+  "Vil": 1,
+  "Verdow": 3,
+  "Evelor": 1,
+  "Lektor": 1
+ }
+}

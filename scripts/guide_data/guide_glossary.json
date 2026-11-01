@@ -1,0 +1,300 @@
+{
+ "glossary": [
+  {
+   "term": "Order of Steering",
+   "category": "Governance",
+   "definition": "A decentralized body tied to Veridia's government that runs the country's system of taxes and subsidies. Rather than banning things, it nudges behavior by making some activities cheaper and others more expensive.",
+   "real_world_link": "Pigouvian taxes; sortition",
+   "first_chapter": 1,
+   "spoiler_safe": true
+  },
+  {
+   "term": "Keeper",
+   "category": "Governance",
+   "definition": "An Order of Steering member who votes on the rubrics, the general rules that decide what gets taxed and by how much. Keepers are picked at random by a cryptographic network and debate and vote anonymously.",
+   "real_world_link": "sortition",
+   "first_chapter": 1,
+   "spoiler_safe": true
+  },
+  {
+   "term": "Sentinel",
+   "category": "Governance",
+   "definition": "An Order of Steering member who audits individual businesses and places each one on a specific tier of a rubric. Sentinels apply the rules that Keepers write.",
+   "real_world_link": null,
+   "first_chapter": 1,
+   "spoiler_safe": true
+  },
+  {
+   "term": "Acolyte",
+   "category": "Governance",
+   "definition": "A trainee in the Order of Steering. Sentinels redo a random tenth of Acolyte audits, and a trainee must keep a high enough score for agreeing with them to earn full membership.",
+   "real_world_link": null,
+   "first_chapter": 1,
+   "spoiler_safe": true
+  },
+  {
+   "term": "Tax rubric / tiers",
+   "category": "Governance",
+   "definition": "A scoring guide for one area, such as the social impact of public performances or how open a piece of software is. It sorts content into tiers, here from 1 to 5, with a higher tax rate at each step, and auditors look at earlier rulings to decide where something belongs.",
+   "real_world_link": null,
+   "first_chapter": 1,
+   "spoiler_safe": true
+  },
+  {
+   "term": "Composite land tax",
+   "category": "Economics & funding",
+   "definition": "Veridia's tax on land, made up of a base rate plus an aesthetics tax and other rubric-based charges. The total is public for every building, so developers have a reason to build things people like.",
+   "real_world_link": "land value tax",
+   "first_chapter": 1,
+   "spoiler_safe": true
+  },
+  {
+   "term": "Aesthetics tax",
+   "category": "Economics & funding",
+   "definition": "The part of the land tax based on how much the public likes a building's appearance. Citizens chosen at random rate buildings, so attractive buildings pay less and can even get a slightly negative rate.",
+   "real_world_link": "sortition; quadratic voting",
+   "first_chapter": 1,
+   "spoiler_safe": true
+  },
+  {
+   "term": "Cryptographic sortition",
+   "category": "Governance",
+   "definition": "Picking people at random for civic duties, such as rating buildings or serving as a Keeper, using a cryptographic lottery that nobody can rig. It is used across Veridia's institutions.",
+   "real_world_link": "sortition; verifiable random functions",
+   "first_chapter": 1,
+   "spoiler_safe": true
+  },
+  {
+   "term": "Quadratic voting",
+   "category": "Governance",
+   "definition": "In the aesthetics vote, each person's ratings are rescaled so they average zero and their squares average one. Voting everything up, down or to the extreme gains nothing, so the best strategy is to rate each building as strongly as you honestly feel.",
+   "real_world_link": "quadratic voting",
+   "first_chapter": 1,
+   "spoiler_safe": true
+  },
+  {
+   "term": "Quadratic Funding",
+   "category": "Economics & funding",
+   "definition": "A national program in Veridia that adds public matching money to projects based on how many people donate to them. Projects with Steering-taxed income can win part of it back, but the system can be gamed.",
+   "real_world_link": "quadratic funding",
+   "first_chapter": 1,
+   "spoiler_safe": true
+  },
+  {
+   "term": "Graph Funding",
+   "category": "Economics & funding",
+   "definition": "Veridia's way of spending public money as a tree of categories, for example health, then airborne disease, then specific projects. At each branch a randomly chosen committee decides how to split the money among the options below it. It pays for things like education and open technology.",
+   "real_world_link": null,
+   "first_chapter": 1,
+   "spoiler_safe": true
+  },
+  {
+   "term": "Zero-knowledge proofs / checks",
+   "category": "Cryptography & privacy",
+   "definition": "A cryptographic proof that a statement is true and reveals nothing else, for example that you hold a valid ticket or that a nearby drone is harmless. In the novel they run constantly, through watches, entry gates and payments.",
+   "real_world_link": "zero-knowledge proofs",
+   "first_chapter": 1,
+   "spoiler_safe": true
+  },
+  {
+   "term": "Device attestation",
+   "category": "Cryptography & privacy",
+   "definition": "A cryptographic certificate showing that a device came from a known manufacturer and batch and runs approved software. Watches flag nearby devices that have none, since they could be spy hardware.",
+   "real_world_link": "remote attestation; trusted hardware",
+   "first_chapter": 1,
+   "spoiler_safe": true
+  },
+  {
+   "term": "Privacy robes",
+   "category": "Cryptography & privacy",
+   "definition": "Loose dark-purple robes with a hood and face cover, worn with matching shoes that even out height and disguise how the wearer walks. They hide who someone is and protect Order members from being recognized and pressured.",
+   "real_world_link": "anti-surveillance clothing",
+   "first_chapter": 1,
+   "spoiler_safe": true
+  },
+  {
+   "term": "Task-guessing bounty",
+   "category": "Cryptography & privacy",
+   "definition": "A deliberate test of Order members' secrecy. Anyone can put down a deposit and guess what task a member is working on; a correct guess cuts the member's pay and gives the guesser half of it.",
+   "real_world_link": "bug bounties; incentive design",
+   "first_chapter": 1,
+   "spoiler_safe": true
+  },
+  {
+   "term": "Reputation score",
+   "category": "Cryptography & privacy",
+   "definition": "A record of someone's trustworthiness that can be proven without revealing who they are, such as showing a score above 200 or using it as collateral for a loan or a hotel check-in. A separate academic reputation is earned only through serious intellectual work.",
+   "real_world_link": "reputation systems; zero-knowledge credentials",
+   "first_chapter": 1,
+   "spoiler_safe": true
+  },
+  {
+   "term": "Emerald AI summary",
+   "category": "Technology",
+   "definition": "Emerald is the AI assistant on Gladias's hand device, which he talks to without making a sound through a band on his throat. It summarizes things, looks up information and helps with audits, though Gladias has to decide when to trust it.",
+   "real_world_link": "AI assistants",
+   "first_chapter": 1,
+   "spoiler_safe": true
+  },
+  {
+   "term": "Co-families",
+   "category": "Culture & language",
+   "definition": "Two households that raise their children together, with all the kids living with one couple for six months and then moving to the other. The parents get alternating stretches of child-rearing and free time.",
+   "real_world_link": null,
+   "first_chapter": 1,
+   "spoiler_safe": true
+  },
+  {
+   "term": "Ticks and longhours",
+   "category": "Culture & language",
+   "definition": "The world's decimal clock: 100 ticks make a minute, 100 minutes a longhour, and 10 longhours a day. Times are written as tick counts, such as 70,000.",
+   "real_world_link": "decimal time",
+   "first_chapter": 1,
+   "spoiler_safe": true
+  },
+  {
+   "term": "Zipcoins",
+   "category": "Economics & funding",
+   "definition": "The digital currency used in Veridia and beyond (abbreviated zc). Payments, including the sales tax on them, go through a cryptographic network privately.",
+   "real_world_link": "cryptocurrency; private payments",
+   "first_chapter": 6,
+   "spoiler_safe": true
+  },
+  {
+   "term": "Silverchat vs Bluewhale",
+   "category": "Technology",
+   "definition": "The two big social platforms. Silverchat is open, so people can build their own apps for it and take their data with them, while Bluewhale is closed, its algorithms are secret, and it limits outside access.",
+   "real_world_link": "open protocols vs walled gardens; interoperability",
+   "first_chapter": 3,
+   "spoiler_safe": true
+  },
+  {
+   "term": "Citizens' assembly",
+   "category": "Governance",
+   "definition": "A group of ordinary citizens who meet to discuss an issue and give their views to the Order of Steering.",
+   "real_world_link": "citizens' assemblies; deliberative democracy",
+   "first_chapter": 3,
+   "spoiler_safe": true
+  },
+  {
+   "term": "Heralds",
+   "category": "Governance",
+   "definition": "Order members picked at random each year to retire and act as public ambassadors. Once they no longer have power, they explain openly how the Order works.",
+   "real_world_link": null,
+   "first_chapter": 6,
+   "spoiler_safe": true
+  },
+  {
+   "term": "\"Grow roots, no head\"",
+   "category": "Culture & language",
+   "definition": "Dzego's guiding strategy. It builds strength through small, spread-out factories and anonymous coordination by cryptography, so there are no exposed leaders or large factories for an enemy to hit.",
+   "real_world_link": "decentralized resilience; distributed manufacturing",
+   "first_chapter": 2,
+   "spoiler_safe": true
+  },
+  {
+   "term": "Anti-transmission foil",
+   "category": "Technology",
+   "definition": "A common material that lines rooms to block wireless signals. In Dzego it is part of everyday protection against surveillance.",
+   "real_world_link": "Faraday cage",
+   "first_chapter": 2,
+   "spoiler_safe": true
+  },
+  {
+   "term": "Open camera inspection",
+   "category": "Cryptography & privacy",
+   "definition": "In Dzego, anyone may take down a public security camera and inspect it, and volunteer clubs publish what they find. Combined with cryptographic logging, this keeps the camera network from being turned against its own people.",
+   "real_world_link": "transparent surveillance; open audits",
+   "first_chapter": 4,
+   "spoiler_safe": true
+  },
+  {
+   "term": "Minpentai",
+   "category": "Games",
+   "definition": "Dzego's hugely popular competitive strategy game, played on a grid whose physics can be run backward, using walls, gliders, spaceships and 'symbols' that let a player see and build. Robed priests secretly add a surprise rule change to each tournament game.",
+   "real_world_link": "cellular automata (e.g. Conway's Game of Life); reversible computing",
+   "first_chapter": 2,
+   "spoiler_safe": true
+  },
+  {
+   "term": "Bansunpei",
+   "category": "Culture & language",
+   "definition": "A priesthood that keeps redesigning Dzegoban, the Dzego language, to make it more regular and useful, including reducing it to 256 root words and testing visual writing systems. It also reformed the world's clock.",
+   "real_world_link": "constructed languages; language planning",
+   "first_chapter": 4,
+   "spoiler_safe": true
+  },
+  {
+   "term": "United Cities co-governance",
+   "category": "Governance",
+   "definition": "A system in which partner cities such as Freetown elect a share of each other's parliaments. The smaller city's share is reduced by a square-root formula based on the two cities' relative sizes.",
+   "real_world_link": "federalism",
+   "first_chapter": 2,
+   "spoiler_safe": true
+  }
+ ],
+ "themes": [
+  {
+   "title": "Nudging instead of banning",
+   "summary": "Veridia hardly forbids anything. It shapes behavior through taxes, subsidies and public ratings. The novel asks whether that is gentle freedom or quiet manipulation, and who decides what counts as good for society.",
+   "where_it_shows": "The aesthetics vote and Dreadknot's rubric tier (ch1); the debate over Steering's reach (ch3)"
+  },
+  {
+   "title": "Privacy as civic infrastructure",
+   "summary": "Zero-knowledge checks, privacy robes and anonymous voting are what keep institutions honest and resistant to bribery. Privacy works as a public good, and people are paid or penalized to protect it.",
+   "where_it_shows": "Zero-knowledge gates and the task-guessing bounty (ch1); Keeper anonymity and fresh robes (ch3)"
+  },
+  {
+   "title": "Decentralization as survival",
+   "summary": "Dzego, under pressure from a powerful neighbor, avoids having leaders or targets an enemy can find. Small factories spread across the country, encrypted coordination and moving classrooms make up its defense.",
+   "where_it_shows": "'Grow roots, no head' and DU's shifting classrooms (ch2); camera audits (ch5)"
+  },
+  {
+   "title": "Comfort versus ambition",
+   "summary": "Veridia's green, gentle, present-focused society is set against the Arctic Empire's push for fast building, industry and longer lives. The novel takes the critique seriously while asking what such ambition costs.",
+   "where_it_shows": "Arctic consul's poster in the Meldan tunnel (ch3)"
+  },
+  {
+   "title": "Information, entropy and reversibility",
+   "summary": "Physics ideas come back as metaphors. Knowledge can be rearranged but not created for free, and anything that can be built can be taken apart. The same logic appears in classrooms, games and strategy.",
+   "where_it_shows": "The DU thermodynamics lecture (ch2); Minpentai's reversible rules (ch4); language compression talk (ch4)"
+  },
+  {
+   "title": "Open versus closed technology",
+   "summary": "Open platforms and open-source tools are presented as public goods that teach and empower people, while closed systems concentrate control. Tax policy is used to push companies toward openness.",
+   "where_it_shows": "Silverchat vs Bluewhale and the openness rubric (ch3); open-source research at GPH (ch3)"
+  },
+  {
+   "title": "Cooperation and game theory in everyday life",
+   "summary": "Characters treat relationships, rivalries and travel plans as strategy problems involving the prisoner's dilemma, the price of anarchy, and coordinating without talking. The book asks when self-interest and working together line up.",
+   "where_it_shows": "Gladias's binomial estimate (ch1); the Minpentai tournament (ch4); the Freetown trip reasoning (ch5)"
+  },
+  {
+   "title": "Experimenting with institutions",
+   "summary": "Each society works like a lab for mechanism design: sortition, quadratic voting, funding organized by category, cities sharing seats in each other's parliaments, and a language redesigned on purpose. The book shows both the elegance of these systems and how they break down.",
+   "where_it_shows": "Veridia's tax system (ch1); United Cities co-governance (ch2, ch5); Bansunpei language reform (ch4)"
+  }
+ ],
+ "opening_hooks": [
+  {
+   "chapter": 1,
+   "hook": "On an ordinary day in Veridia's capital, trainee auditor Gladias has to rate a heavy-metal band for tax purposes, and an anonymous message afterward shows that someone has found out his secret role."
+  },
+  {
+   "chapter": 2,
+   "hook": "In Dzego, teenage Minpentai player Zei goes to a physics lesson at a hidden university and finds out how real the danger from the Arctic Empire is."
+  },
+  {
+   "chapter": 3,
+   "hook": "Gladias goes to meet his mysterious contact deep inside the walled Greater Plum Harbor enclave, where his trust in the Steering system is tested."
+  },
+  {
+   "chapter": 4,
+   "hook": "Zei arrives at a high-stakes Minpentai tournament held inside a mountain carved into a pyramid, where his old rival Bai is waiting."
+  },
+  {
+   "chapter": 5,
+   "hook": "A trip abroad to Freetown sets up a chance meeting that links the Dzego and Veridia storylines."
+  }
+ ]
+}

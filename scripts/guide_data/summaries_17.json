@@ -1,0 +1,36 @@
+{
+ "chapters": [
+  {
+   "chapter": 17,
+   "summary": "In Meldan, Gladias visits Senator Verdow at the Veridian parliament to ask whether he should travel to Dzego. Verdow encourages the trip and promises introductions to Dzego officials, but is impressed to learn Gladias has an indirect link to Zei, a national-level Minpentai semifinal winner. A Graph Funding steward, Belgor, then explains how the system splits public funding decisions across a graph of randomly selected committees, and how open-sourcing defensive technology like pandemic protection keeps the world on a level playing field. At home, Febric and Hreda announce a winter exchange to Northglade near the Arctic border, and Gladias casts his first Keeper vote on the hardware-openness rubric, rejecting the military exclusion and backing the higher tax brackets and broader anti-repair rule."
+  },
+  {
+   "chapter": 18,
+   "summary": "Gladias arrives in Pafogai Du, where Zei and Bai pick him up in one of the city's black privacy cars, whose cabins are randomly swapped in a tunnel so no one can track passengers. On a walk alone he notices how quickly the city has adapted to the Arctic threat: neck bands, privacy robes, and a physical mixnet for shipping goods so no single carrier knows both source and destination. Back at the hotel, Fin joins them and reveals that the Bansunpei, the group that iterates on the Dzegoban language, has paused its next language version and instead used its trusted channels to roll out privacy and security recommendations that swept the country within days. Fin argues that Dzego's real strength is its leaderless capacity to coordinate, which he believes will let it defeat the Arctics."
+  },
+  {
+   "chapter": 19,
+   "summary": "Zei brings Gladias to a cafeteria inside Pafogai Du's mountain pyramid to meet Den of the Kungaupei, updating Gladias's watch so it recognizes Dzego's security devices. Before Den arrives, Zei receives an anonymous broadcast, paid for by burning zipcoins, from the Sadzu Du food court where he once ate with Deluin; it points to huge disguised files, which the pair download at the pyramid's grand library. The reconstructed files turn out to be an obfuscated language model that asks Zei to describe the day of his semifinal, and his detailed account of his courtyard meeting with Deluin unlocks a hidden letter. In it Deluin explains that the Arctics confiscated and backdoored Redshire's devices, that his Arctic-sympathizing parents are taking him into the Empire's core territory, and that he will play along to earn Arctic trust in the hope of helping Zei someday, warning this may be his last message."
+  },
+  {
+   "chapter": 20,
+   "summary": "Seila wakes to news that the Arctic Empire has seized Northglade almost without resistance; Febric and Hreda are safe inside the Greater Plum Harbor, which the Arctics are treating as a neutral zone. Mov arrives, worried that the weaknesses that enabled the invasion run through all of Veridia, and recounts that Delwart admitted to Gladias he worked for Silverchat. Seila insists on investigating, and with Mov she visits Keepers Delwart had approached: Telroy and Balme each describe a Delwart with different views tailored to their rubric groups, while Lectoby, on the social media openness rubric, reports that no one in his group was ever contacted. Since that is the rubric Silverchat would care about most, Seila concludes that Delwart's Silverchat story is a cover and he does not work for them."
+  },
+  {
+   "chapter": 21,
+   "summary": "Over dinner with Vil, Daia, Lily and Zven, Seila shares that Febric and Hreda are living as refugees in the Greater Plum Harbor with no way home yet, Vil describes Divergent's second appeal in the Jump lawsuit, and Zven guesses that the effort to manipulate the Order is the Arctics' doing. Later, Seila furiously confronts Gladias by call from Dzego: Delwart is not from Silverchat, the overheard Silverchat meeting was likely staged for Mov, and, tallying the evidence, she concludes Delwart is an Arctic agent working to weaken the Order by telling each Keeper what they want to hear. Gladias apologizes and promises no more secrets, explaining that Dzego's real defense is a shadow military trained through Minpentai and that he is urging them to help defend Veridia first. Seila warns that convincing Veridia's parliament to accept such help is the harder problem, and neither has a plan yet."
+  },
+  {
+   "chapter": 22,
+   "summary": "In Freetown, Jahn notices the city's response to the Arctic threat: shelter advertisements, higher tolls to fund defense, and new roads that seem to quietly reward defense companies who sold shelter space to arm themselves. At the Economics Institute, he and Utaku discuss whether Freetown's market incentives are working and how the United Cities' early history, including voluntary migration between cities with different values, built lasting legitimacy. Zei then calls Jahn, whose earlier introduction connected Dzego with Freetown defense companies, and shows him a live operation in which Dzego drones trap an Arctic ground drone in Redshire, using it to practice survival before destroying it; Zei narrowly wins when Arctic reinforcements arrive. Zei explains that they smuggle data in and out of Redshire hidden in fake calls, and asks Jahn for an introduction to a different defense company, one stronger in airborne systems, to help capture an Arctic drone."
+  },
+  {
+   "chapter": 23,
+   "summary": "In an underground cafeteria in the mountain pyramid, Gladias, Bai and Fin hear from an exhausted Zei that the Freetown drone partnership survived an Arctic ambush, and the group agrees that quick wins like this build trust, though the harder step will be winning over Veridia's institutions, which Seila is now pursuing through Senator Verdow. Fin tests Gladias's progress in Dzegoban with a passage on minimalism, and Zei shows he has learned how the Order of Steering, the Sentinels and the Courts work; Gladias shares that Vil's lawsuit ended with Divergent's appeal ruled bad faith and the payout tripled. That night Seila calls Gladias in a fury: she caught Lily cheering Arctic propaganda in an online group, and after a bitter fight Lily ran away, leaving her watch on a random bus. When Gladias says they both share the blame for Lily, Seila hangs up on him."
+  },
+  {
+   "chapter": 24,
+   "summary": "After a sleepless night, Gladias asks Zven to stay in friendly contact with Lily and learn where she is, only to find Seila had already asked him to do exactly that. In the library, Bai comforts Gladias and shares how her own harsh, loveless childhood made the Arctic idea of love as a reward for winning work for her, though she concludes no single motivation suits everyone; she urges him to win against the Arctics as the only way to reunite his family. Gladias then proposes to Den, the Kungaupei leader, that Dzego spy on Veridia to expose the Arctic infiltration there, offering intelligence, Keeper contacts and shared responsibility with Verdow if the plan comes out. Den agrees, and when Gladias suggests backdooring the Dzego-made security cameras Veridia already uses, he points out that the Arctics have likely done the same thing already."
+  }
+ ]
+}

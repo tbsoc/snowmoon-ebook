@@ -68,6 +68,8 @@ h1 { font-weight: normal; font-size: 2.6rem; letter-spacing: .14em; text-transfo
   border: 1px solid var(--line); border-radius: 999px; padding: 10px 16px; background: var(--surface);
 }
 .jump:hover { border-color: var(--accent); }
+.jumps { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 18px; }
+.jumps .jump { margin-top: 0; }
 
 .about {
   display: grid; grid-template-columns: 1.5fr 1fr; gap: 64px;
@@ -156,7 +158,10 @@ footer p { margin: 6px 0; }
     <div class="moon" aria-hidden="true"></div>
     <h1>Snowmoon</h1>
     <p class="byline">a novel by Vitalik Buterin</p>
-    <a class="jump" href="#dl-heading">Download the book ↓</a>
+    <div class="jumps">
+      <a class="jump" href="#dl-heading">Download the book ↓</a>
+      <a class="jump" href="guide.html">Reader's guide →</a>
+    </div>
   </header>
 
   <main>
