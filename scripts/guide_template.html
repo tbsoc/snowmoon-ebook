@@ -427,14 +427,15 @@ footer p { margin: 6px 0; }
     prev.addEventListener('click', function () { select(n - 1); });
     next.addEventListener('click', function () { select(n + 1); });
     var also = t.scene_places.filter(function (p) { return p !== t.place; });
-    detail.append(
+    // append() would print a skipped (null) part as the text "null", so drop them first
+    detail.append.apply(detail, [
       el('div', { class: 'kicker', text: 'Chapter ' + n + ' · ' + (th === 'Freetown' ? 'Freetown storyline' : th + ' storyline') }),
       el('h3', { text: t.place }),
       el('div', { class: 'sans', style: 'color:var(--muted);font-size:.88rem', text: t.month + ' ' + t.day + ', year ' + t.year +
-        ' · about ' + (Math.round(t.words / 100) * 100).toLocaleString() + ' words' + (also.length ? ' · also cuts to ' + also.join(', ') : '') }),
+        (also.length ? ' · also cuts to ' + also.join(', ') : '') }),
       hooks[n] ? el('p', { text: hooks[n] }) : null,
       spoilerBlock(n),
-      el('div', { class: 'nav-row' }, [prev, next]));
+      el('div', { class: 'nav-row' }, [prev, next])].filter(Boolean));
   };
   chipGroup(document.getElementById('tl-filter'), [{ label: 'All storylines', value: 'All' }].concat(['Veridia', 'Dzego', 'Freetown'].map(function (t) {
     return { label: t, value: t, color: THREADS[t].color }; })), function (f) {
