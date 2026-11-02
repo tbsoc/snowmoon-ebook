@@ -76,11 +76,7 @@ h2 { font: 600 .78rem/1 system-ui, -apple-system, "Segoe UI", sans-serif; letter
 .lead { font-size: 1.35rem; line-height: 1.4; margin: 0 0 22px; max-width: 40em; }
 
 /* At a glance */
-.facts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
-.fact { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px; }
-.fact .num { font-size: 1.7rem; line-height: 1.1; }
-.fact .label { color: var(--muted); font: .85rem/1.4 system-ui, -apple-system, "Segoe UI", sans-serif; margin-top: 4px; }
-.threads { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 14px; }
+.threads { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
 .thread { background: var(--surface); border: 1px solid var(--line); border-top: 4px solid var(--c); border-radius: 12px; padding: 18px; }
 .thread h3 { margin: 0 0 4px; font-size: 1.1rem; }
 .thread p { margin: 0; color: var(--muted); font-size: .95rem; }
@@ -158,7 +154,6 @@ footer p { margin: 6px 0; }
 
 @media (max-width: 900px) {
   .grid { grid-template-columns: repeat(2, 1fr); }
-  .facts { grid-template-columns: repeat(2, 1fr); }
   .threads { grid-template-columns: 1fr; }
 }
 @media (max-width: 600px) {
@@ -206,7 +201,6 @@ footer p { margin: 6px 0; }
       <h2>At a glance</h2>
       <p class="lead">A far-future political science-fiction novel that follows two people in two very different
         societies, as a powerful empire leans on both.</p>
-      <div class="facts" id="facts"></div>
       <div class="threads" id="threads"></div>
     </section>
 
@@ -295,15 +289,6 @@ footer p { margin: 6px 0; }
   };
 
   // ---- At a glance ----
-  var places = {}; D.timeline.forEach(function (t) { places[t.place] = 1; });
-  var words = D.timeline.reduce(function (s, t) { return s + t.words; }, 0);
-  var monthsSpanned = []; D.timeline.forEach(function (t) { var k = t.year + ' ' + t.month; if (monthsSpanned.indexOf(k) < 0) monthsSpanned.push(k); });
-  [[D.timeline.length, 'chapters'], ['~' + Math.round(words / 1000) + 'k', 'words, about a 6–8 hour read'],
-   ['1 yr+', 'of story time, from ' + D.timeline[0].month + ' ' + D.timeline[0].year + ' to ' +
-     D.timeline[D.timeline.length - 1].month + ' ' + D.timeline[D.timeline.length - 1].year],
-   ['3', 'storylines, in Veridia, Dzego and Freetown']].forEach(function (f) {
-    document.getElementById('facts').appendChild(el('div', { class: 'fact' }, [el('div', { class: 'num', text: String(f[0]) }), el('div', { class: 'label', text: f[1] })]));
-  });
   ['Veridia', 'Dzego', 'Freetown'].forEach(function (t) {
     var n = D.timeline.filter(function (c) { return threadOf(c.place) === t; }).length;
     document.getElementById('threads').appendChild(el('div', { class: 'thread', style: '--c:' + THREADS[t].color }, [
